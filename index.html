@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>צמד ברזל | שקיפות. אמינות. ליווי משקיעים.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: '#1B3A5C',
+              gold: '#D4AF37',
+              offwhite: '#F8F6F1',
+              whatsapp: '#25D366',
+            },
+            fontFamily: {
+              heebo: ['Heebo', 'sans-serif'],
+              inter: ['Inter', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Heebo', sans-serif;
+        overflow-x: hidden;
+      }
+      .font-inter {
+        font-family: 'Inter', sans-serif;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1B3A5C;
+        border-radius: 4px;
+      }
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(50%); }
+      }
+      .animate-marquee {
+        display: flex;
+        width: 200%;
+        animation: scroll 30s linear infinite;
+      }
+    </style>
+  <body class="bg-white text-navy selection:bg-gold/30">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
