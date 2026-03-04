@@ -17,28 +17,52 @@ const MilitaryLectures: React.FC = () => {
     const setInteracting = () => { isInteracting = true; };
     const clearInteracting = () => { isInteracting = false; };
 
+    // Mobile touch
     el.addEventListener('touchstart', setInteracting, { passive: true });
     el.addEventListener('touchend', clearInteracting);
     el.addEventListener('touchcancel', clearInteracting);
 
+    // Desktop mouse drag
+    let startX: number;
+    let scrollLeft: number;
+
+    const onMouseDown = (e: MouseEvent) => {
+      isInteracting = true;
+      startX = e.pageX - el.offsetLeft;
+      scrollLeft = el.scrollLeft;
+    };
+    const onMouseLeave = () => { isInteracting = false; };
+    const onMouseUp = () => { isInteracting = false; };
+    const onMouseMove = (e: MouseEvent) => {
+      if (!isInteracting) return;
+      e.preventDefault();
+      const x = e.pageX - el.offsetLeft;
+      const walk = (x - startX) * 2; // Scroll-fast
+      el.scrollLeft = scrollLeft - walk;
+    };
+
+    el.addEventListener('mousedown', onMouseDown);
+    el.addEventListener('mouseleave', onMouseLeave);
+    el.addEventListener('mouseup', onMouseUp);
+    el.addEventListener('mousemove', onMouseMove);
+
     const step = () => {
-      if (window.innerWidth < 1024) {
-        // Only run native scrolling loop on mobile
-        const setWidth = el.scrollWidth / 4;
+      // Run native scrolling loop on both mobile and desktop for consistency
+      const setWidth = el.scrollWidth / 4;
 
-        // Auto scroll if not dragging
-        if (!isInteracting) {
-          el.scrollLeft -= 1; // Smooth slow scroll leftwards (advances RTL items)
-        }
-
-        // Seamless Looping:
-        const currentAbs = Math.abs(el.scrollLeft);
-        if (currentAbs >= setWidth * 2) {
-          el.scrollLeft += setWidth;
-        } else if (currentAbs < 5) {
-          el.scrollLeft -= setWidth;
-        }
+      // Auto scroll if not dragging
+      if (!isInteracting) {
+        el.scrollLeft -= 0.5; // Slower, smoother scroll
       }
+
+      // Seamless Looping:
+      const currentAbs = Math.abs(el.scrollLeft);
+      if (currentAbs >= setWidth * 2) {
+        el.scrollLeft += setWidth;
+      } else if (currentAbs < 5) {
+        el.scrollLeft -= setWidth;
+      }
+
       animationId = window.requestAnimationFrame(step);
     };
 
@@ -111,12 +135,12 @@ const MilitaryLectures: React.FC = () => {
       <div className="relative flex overflow-hidden w-full mt-10" dir="rtl">
         <div
           ref={scrollRef}
-          className="flex items-center gap-6 md:gap-16 py-4 overflow-x-auto lg:overflow-visible pb-8 lg:pb-4 hide-scrollbar lg:animate-marquee select-none w-max lg:w-[200%]"
+          className="flex items-center gap-8 md:gap-20 py-4 overflow-x-auto pb-8 lg:pb-4 hide-scrollbar select-none w-max cursor-grab active:cursor-grabbing"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
           {[...MILITARY_LOGOS, ...MILITARY_LOGOS, ...MILITARY_LOGOS, ...MILITARY_LOGOS].map((unit, i) => (
             <div
               key={i}
-              className="text-white/20 text-xl md:text-3xl lg:text-4xl font-black tracking-widest hover:text-gold transition-colors duration-500 lg:cursor-default uppercase whitespace-nowrap shrink-0 px-2"
+              className="text-white/20 text-3xl md:text-5xl lg:text-5xl font-black tracking-widest hover:text-gold transition-colors duration-500 uppercase whitespace-nowrap shrink-0 px-2"
             >
               {unit}
             </div>
