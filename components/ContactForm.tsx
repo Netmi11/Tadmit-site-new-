@@ -108,11 +108,12 @@ const ContactForm: React.FC = () => {
                 <select
                   value={formData.interest}
                   onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                  className="w-full bg-white/5 border-2 border-white/10 rounded-2xl py-5 px-8 text-white focus:border-gold outline-none transition-all text-right text-lg appearance-none cursor-pointer"
+                  className="w-full border-2 border-white/10 rounded-2xl py-5 px-8 text-white focus:border-gold outline-none transition-all text-right text-lg appearance-none cursor-pointer"
+                  style={{ backgroundColor: '#1B3A5C' }}
                 >
-                  <option value="ליווי אישי">ליווי אישי לקניית דירה</option>
-                  <option value="קבוצת רכישה">הצטרפות לקבוצת רכישה</option>
-                  <option value="שיתוף פעולה">שיתוף פעולה עסקי</option>
+                  <option value="ליווי אישי" style={{ backgroundColor: '#1B3A5C', color: 'white' }}>ליווי אישי לקניית דירה</option>
+                  <option value="קבוצת רכישה" style={{ backgroundColor: '#1B3A5C', color: 'white' }}>הצטרפות לקבוצת רכישה</option>
+                  <option value="שיתוף פעולה" style={{ backgroundColor: '#1B3A5C', color: 'white' }}>שיתוף פעולה עסקי</option>
                 </select>
                 <div className="absolute left-6 top-1/2 -translate-y-1/2 pointer-events-none text-white/30">
                   <Send size={20} className="rotate-180" />
