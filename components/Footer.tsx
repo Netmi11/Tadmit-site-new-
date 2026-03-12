@@ -19,7 +19,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               מביאים שקיפות, אמינות וביטחון לשוק הנדל"ן הישראלי. ליווי מקצועי של קצינים לשעבר אל עבר ההצלחה הכלכלית שלכם.
             </p>
             <div className="flex gap-4 justify-end items-center">
-              <Logo className="w-16 h-16" />
+              <Logo className="w-16 h-16 md:w-28 md:h-28" />
               <a href="https://www.instagram.com/ironteam_realestate/profilecard/?igsh=MThsYXVmMWluMWw5bA==" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:text-navy hover:border-gold transition-all">
                 <Instagram size={19} />
               </a>
