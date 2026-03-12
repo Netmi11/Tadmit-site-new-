@@ -15,13 +15,11 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 mb-12 md:mb-20 text-right">
           {/* Column 1: Brand */}
           <div className="space-y-6 order-last md:order-first">
-            <div className="flex items-center justify-end">
-              <Logo className="w-24 h-24" />
-            </div>
             <p className="text-white/60 leading-relaxed text-base">
               מביאים שקיפות, אמינות וביטחון לשוק הנדל"ן הישראלי. ליווי מקצועי של קצינים לשעבר אל עבר ההצלחה הכלכלית שלכם.
             </p>
-            <div className="flex gap-4 justify-end">
+            <div className="flex gap-4 justify-end items-center">
+              <Logo className="w-16 h-16" />
               <a href="https://www.instagram.com/ironteam_realestate/profilecard/?igsh=MThsYXVmMWluMWw5bA==" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:text-navy hover:border-gold transition-all">
                 <Instagram size={19} />
               </a>
