@@ -22,6 +22,7 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          style={{ willChange: 'transform, opacity' }}
           className="order-2 lg:order-1 text-right"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gold/10 border border-gold/20 rounded-full mb-6">
@@ -57,12 +58,15 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
+          style={{ willChange: 'transform, opacity' }}
           className="relative order-1 lg:order-2 flex items-center justify-center"
         >
           <div className="relative z-10 rounded-[4rem] overflow-hidden shadow-2xl border-8 md:border-[12px] border-white aspect-[4/4.5] max-w-[360px] sm:max-w-[440px] lg:max-w-[480px] mx-auto group">
             <img
               src="/assets/hero.webp"
               alt="צמד ברזל - ליווי נדלן"
+              fetchPriority="high"
+              decoding="async"
               className="w-full h-full object-cover scale-[1.04] transition-transform duration-700 group-hover:scale-[1.09]"
             />
           </div>

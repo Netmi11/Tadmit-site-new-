@@ -73,10 +73,11 @@ const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.2 }}
-              className="group relative bg-white/95 p-6 lg:p-10 rounded-[3rem] lg:rounded-[4rem] border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-2xl hover:shadow-navy/10 transition-all duration-700 overflow-hidden flex flex-col"
+              className="group relative bg-white/95 p-6 lg:p-10 rounded-[3rem] lg:rounded-[4rem] border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-2xl hover:shadow-navy/10 transition-all duration-700 overflow-hidden"
             >
-              <div className="hidden lg:block absolute inset-0 bg-gradient-to-br from-navy to-[#0d1e31] translate-y-[101%] group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] -z-10" />
+              <div className="hidden lg:block absolute inset-0 bg-gradient-to-br from-navy to-[#0d1e31] translate-y-[101%] group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] z-0" />
 
+              <div className="relative z-10 flex flex-col flex-1">
               <div className="w-20 h-20 bg-white lg:group-hover:bg-navy rounded-3xl flex items-center justify-center mb-6 transition-all duration-500 transform lg:group-hover:scale-105 border border-navy/5 shadow-sm">
                 <ServiceIcon type={service.iconType} />
               </div>
@@ -117,6 +118,7 @@ const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
                   גלו עוד על המסלול
                   <ArrowRight className="rotate-180 transform group-hover/btn:translate-x-[-8px] transition-transform" size={28} />
                 </button>
+              </div>
               </div>
             </motion.div>
           ))}
