@@ -24,7 +24,7 @@ const Testimonials: React.FC = () => {
               transition={{ delay: idx * 0.1 }}
               className="group"
             >
-              <div className="relative mb-8 md:mb-12 h-[350px] md:h-[600px] rounded-[3rem] md:rounded-[4rem] overflow-hidden shadow-[0_40px_80px_-15px_rgba(27,58,92,0.25)] border-[8px] md:border-[10px] border-white bg-white/40 backdrop-blur-xl flex items-center justify-center group-hover:scale-[1.03] transition-all duration-700">
+              <div className="relative mb-8 md:mb-12 h-[350px] md:h-[600px] rounded-[3rem] md:rounded-[4rem] overflow-hidden shadow-[0_40px_80px_-15px_rgba(27,58,92,0.25)] border-[8px] md:border-[10px] border-white bg-white/90 flex items-center justify-center group-hover:scale-[1.03] transition-all duration-700">
                 {/* Placeholder for Video/Image */}
                 <div className="w-full h-full relative bg-navy/5">
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03]">
@@ -37,12 +37,12 @@ const Testimonials: React.FC = () => {
                   <motion.button
                     whileHover={{ scale: 1.1, backgroundColor: '#D4AF37', color: '#1B3A5C' }}
                     whileTap={{ scale: 0.9 }}
-                    className="w-28 h-28 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center shadow-3xl border border-white/30 transition-colors"
+                    className="w-28 h-28 bg-white/30 text-white rounded-full flex items-center justify-center shadow-3xl border border-white/30 transition-colors"
                   >
                     <Play fill="currentColor" size={36} className="ml-1" />
                   </motion.button>
                 </div>
-                <div className="absolute bottom-6 right-6 md:bottom-12 md:right-12 text-navy text-right z-20 px-6 py-4 md:px-8 md:py-5 bg-white/90 backdrop-blur-lg rounded-3xl shadow-2xl border border-white">
+                <div className="absolute bottom-6 right-6 md:bottom-12 md:right-12 text-navy text-right z-20 px-6 py-4 md:px-8 md:py-5 bg-white/95 rounded-3xl shadow-2xl border border-white">
                   <h4 className="text-2xl md:text-3xl font-black mb-1">{t.name}</h4>
                   <p className="text-gold font-bold text-xs md:text-sm tracking-widest uppercase">{t.role}</p>
                 </div>

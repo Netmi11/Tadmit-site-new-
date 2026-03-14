@@ -73,7 +73,7 @@ const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.2 }}
-              className="group relative bg-white/40 backdrop-blur-3xl p-6 lg:p-10 rounded-[3rem] lg:rounded-[4rem] border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-2xl hover:shadow-navy/10 transition-all duration-700 overflow-hidden flex flex-col"
+              className="group relative bg-white/95 p-6 lg:p-10 rounded-[3rem] lg:rounded-[4rem] border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-2xl hover:shadow-navy/10 transition-all duration-700 overflow-hidden flex flex-col"
             >
               <div className="hidden lg:block absolute inset-0 bg-gradient-to-br from-navy to-[#0d1e31] translate-y-[101%] group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] -z-10" />
 

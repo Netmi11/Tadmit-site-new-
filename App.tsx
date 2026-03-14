@@ -101,7 +101,7 @@ const App: React.FC = () => {
                 <div className="aspect-video bg-navy rounded-[3rem] mb-8 overflow-hidden relative shadow-3xl flex items-center justify-center border-8 border-white group cursor-pointer">
                   <Play className="text-gold relative z-10 group-hover:scale-110 transition-transform" size={80} />
                   <div className="absolute inset-0 bg-navy/40" />
-                  <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80" className="absolute inset-0 w-full h-full object-cover opacity-30" />
+                  <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-30" />
                 </div>
                 <p className="text-navy/60 font-bold text-xl">צפו בסרטון קצר שמסביר את תהליך הליווי שלנו</p>
                 <div className="mt-8">
@@ -124,12 +124,12 @@ const App: React.FC = () => {
 
                 <Timeline
                   steps={[
-                    { title: 'אפיון אישי וניסוח תכנית עסקית', desc: 'מנתחים יחד את הצרכים, התקציב והיעדים כדי לבנות תכנית מותאמת אישית לרכישה הכמה.', icon: <Target size={32} />, image: '/assets/personal-service.jpg', imageAspect: 'aspect-[9/16] !w-[56.25%] mx-auto' },
-                    { title: 'חקר שוק', desc: 'מבצעים ניתוח אזורים, מחירים והשוואות כדי לזהות את ההזדמנויות המדיניות עבורכם.', icon: <Search size={32} /> },
-                    { title: 'הצגת עסקה', desc: 'מציגים רק את הנכסים הרלוונטיים ביותר לצד נתונים ברורים ומודקים מסב מלא.', icon: <Building size={32} /> },
-                    { title: 'משא ומתן', desc: 'מנהלים עבורכם מו"מ מקצועי להשגת מחיר ותנאים מיטביים בעסקה.', icon: <Handshake size={32} /> },
+                    { title: 'אפיון אישי וניסוח תכנית עסקית', desc: 'מנתחים יחד את הצרכים, התקציב והיעדים כדי לבנות תכנית מותאמת אישית לרכישה הכמה.', icon: <Target size={32} />, image: '/assets/personal-service.webp', imageAspect: 'aspect-[9/16] !w-[56.25%] mx-auto' },
+                    { title: 'חקר שוק', desc: 'מבצעים ניתוח אזורים, מחירים והשוואות כדי לזהות את ההזדמנויות המדיניות עבורכם.', icon: <Search size={32} />, image: '/assets/market-research.webp', imageAspect: 'aspect-[9/16] !w-[56.25%] mx-auto' },
+                    { title: 'הצגת עסקה', desc: 'מציגים רק את הנכסים הרלוונטיים ביותר לצד נתונים ברורים ומודקים מסב מלא.', icon: <Building size={32} />, image: '/assets/deal-presentation.webp', imageAspect: 'aspect-[11/16] !w-[68%] mx-auto' },
+                    { title: 'משא ומתן', desc: 'מנהלים עבורכם מו"מ מקצועי להשגת מחיר ותנאים מיטביים בעסקה.', icon: <Handshake size={32} />, image: '/assets/negotiation.webp' },
                     { title: 'מעורבות אנשי מקצוע ובדיקות חיוניות', desc: 'מכניסים לעבודה שמאי, מהנדס, שמאי ומבדק, כדי לוודא שארכש תקין וללא הפתעות.', icon: <ShieldCheck size={32} /> },
-                    { title: 'הסכם מכר ורכישת הדירה', desc: 'מלווים אתכם בהסדרת ההיבטים המשפטיים והפיננסיים עד חתימה על הסכם המכר.', icon: <Key size={32} /> }
+                    { title: 'הסכם מכר ורכישת הדירה', desc: 'מלווים אתכם בהסדרת ההיבטים המשפטיים והפיננסיים עד חתימה על הסכם המכר.', icon: <Key size={32} />, image: '/assets/purchase-agreement.webp', imageAspect: 'aspect-[11/16] !w-[68%] mx-auto' }
                   ]}
                 />
               </div>
@@ -186,8 +186,8 @@ const App: React.FC = () => {
                 <Timeline
                   steps={[
                     { title: 'גיבוש הקבוצה', desc: 'איחוד משקיעים עם הון עצמי דומה ויעדים משותפים.', icon: <Users size={32} /> },
-                    { title: 'איתור פרויקט פרי-סייל', desc: 'מציאת יזם המעוניין למכור כמות יחידות בהנחה.', icon: <Search size={32} />, image: '/assets/presale.jpg' },
-                    { title: 'מינוף כוח הקנייה', desc: 'ניהול מו״מ קבוצתי להשגת מחיר חסר תקדים.', icon: <Briefcase size={32} /> },
+                    { title: 'איתור פרויקט פרי-סייל', desc: 'מציאת יזם המעוניין למכור כמות יחידות בהנחה.', icon: <Search size={32} />, image: '/assets/presale.webp' },
+                    { title: 'מינוף כוח הקנייה', desc: 'ניהול מו״מ קבוצתי להשגת מחיר חסר תקדים.', icon: <Briefcase size={32} />, image: '/assets/buying-power.webp' },
                     { title: 'ליווי מלא עד קבלת מפתח', desc: 'פיקוח ובקרה לאורך כל חיי הפרויקט.', icon: <Building size={32} /> }
                   ]}
                   priceLabel="עמלת הצטרפות מופחתת למשקיעים"
@@ -273,10 +273,10 @@ const App: React.FC = () => {
                   <div className="order-1 lg:order-2 relative">
                     <div className="relative h-[580px] md:h-[680px]">
                       <div className="absolute top-0 right-0 w-[432px] md:w-[504px] aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white rotate-[-6deg] hover:rotate-0 transition-transform duration-500">
-                        <img src="/assets/about1.png" alt="צמד ברזל" className="w-full h-full object-cover" />
+                        <img src="/assets/about1.webp" loading="lazy" alt="צמד ברזל" className="w-full h-full object-cover" />
                       </div>
                       <div className="absolute bottom-0 left-0 w-[432px] md:w-[504px] aspect-[5/3] rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white rotate-[5deg] hover:rotate-0 transition-transform duration-500">
-                        <img src="/assets/about2.png" alt="צמד ברזל" className="w-full h-full object-cover" />
+                        <img src="/assets/about2.webp" loading="lazy" alt="צמד ברזל" className="w-full h-full object-cover" />
                       </div>
                       <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gold/20 rounded-full blur-3xl -z-10 pointer-events-none" />
                     </div>

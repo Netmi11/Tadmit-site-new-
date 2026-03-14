@@ -56,11 +56,10 @@ const FAQ: React.FC = () => {
             return (
               <motion.div
                 key={idx}
-                layout
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.06, layout: { duration: 0.25, ease: 'easeOut' } }}
+                transition={{ delay: idx * 0.06 }}
                 className="rounded-2xl overflow-hidden"
                 style={{
                   background: isOpen ? '#1B3A5C' : 'white',

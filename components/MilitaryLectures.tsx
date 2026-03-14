@@ -28,7 +28,8 @@ const MilitaryLectures: React.FC = () => {
         <div className="flex gap-6 md:gap-10 justify-center items-center mt-6 mb-2 px-4">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-gold/30 w-56 md:w-64 lg:w-72 aspect-[4/3] group rotate-[-3deg] hover:rotate-0 transition-transform duration-500">
             <img
-              src="/assets/amit-lecture.png"
+              src="/assets/amit-lecture.webp"
+              loading="lazy"
               alt="עמית גולד מרצה ביחידות צבאיות"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -38,7 +39,8 @@ const MilitaryLectures: React.FC = () => {
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-gold/30 w-56 md:w-64 lg:w-72 aspect-[4/3] group rotate-[3deg] hover:rotate-0 transition-transform duration-500">
             <img
-              src="/assets/noam-lecture.png"
+              src="/assets/noam-lecture.webp"
+              loading="lazy"
               alt="נועם סדן מרצה ביחידות צבאיות"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />

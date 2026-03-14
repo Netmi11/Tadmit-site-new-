@@ -61,7 +61,7 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
         >
           <div className="relative z-10 rounded-[4rem] overflow-hidden shadow-2xl border-8 md:border-[12px] border-white aspect-[4/4.5] max-w-[360px] sm:max-w-[440px] lg:max-w-[480px] mx-auto group">
             <img
-              src="/assets/hero.png"
+              src="/assets/hero.webp"
               alt="צמד ברזל - ליווי נדלן"
               className="w-full h-full object-cover scale-[1.04] transition-transform duration-700 group-hover:scale-[1.09]"
             />
@@ -69,7 +69,7 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute -top-12 -right-12 w-48 h-48 border border-gold/10 rounded-full -z-10"
+            className="absolute -top-12 -right-12 w-48 h-48 border border-gold/10 rounded-full -z-10" style={{ willChange: "transform" }}
           />
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-gold/10 rounded-full blur-[100px] -z-10 animate-pulse" />
         </motion.div>
