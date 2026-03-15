@@ -61,7 +61,7 @@ const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
           >
             איך אנחנו עובדים
           </motion.span>
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-navy tracking-tighter">המסלול שלכם לביטחון</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-navy tracking-tighter">מתודולוגיה מוכחת. תוצאות בשטח.</h2>
           <div className="w-24 h-2 bg-gold mx-auto mt-8 rounded-full shadow-lg shadow-gold/20" />
         </div>
 

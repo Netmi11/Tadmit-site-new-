@@ -27,14 +27,17 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gold/10 border border-gold/20 rounded-full mb-6">
             <ShieldCheck className="text-gold" size={16} />
-            <span className="text-navy font-black tracking-widest text-xs uppercase">שקיפות. אמינות. ליווי צמוד.</span>
+            <span className="text-navy font-black tracking-widest text-xs uppercase">שקיפות, מקצוענות, רווחיות</span>
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-navy leading-tight mb-6">
             צמד ברזל מנקים את עולם ההשקעות <br />
             <span className="text-gold">מאינטרסים חבויים</span>
           </h1>
           <p className="text-xl md:text-2xl text-navy/70 leading-relaxed mb-10 max-w-xl">
-            נציגי קונים בלעדיים — בעולם של אינטרסים מתחת לשולחן, אנחנו כאן כדי להיות ב-100% נאמנות מוחלטת לאינטרס שלך.
+            מומחי נדל"ן. נציגי קונים בלעדיים.
+צמד ברזל — ניתוח שוק מעמיק, עסקאות מדויקות, 100% נאמנות לאינטרס שלך.
+עם ניסיון של 100+ עסקאות ו-5 שנות ליווי מקצועי — אנחנו יודעים בדיוק מה לחפש, ומה להימנע ממנו.
+דוגלים בשקיפות מלאה לאורך כל התהליך.
           </p>
 
           <div className="flex flex-col sm:flex-row-reverse gap-4">
