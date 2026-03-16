@@ -21,7 +21,7 @@ const MissionVision: React.FC = () => {
             <div className="w-24 h-2 bg-gold mb-12 rounded-full" />
             
             <p className="text-2xl md:text-4xl font-black text-navy leading-relaxed italic px-4">
-              "להנגיש את התחום בשקיפות מלאה, בטחון ובסטנדרטים גבוהים של אמינות לכל מי שמעוניין לבנות עתיד כלכלי יציב."
+              "להנגיש את תחום הנדל"ן בשקיפות מלאה, בסטנדרטים גבוהים ומקצועיים לכל מי שמעוניין לבנות עתיד כלכלי יציב."
             </p>
           </motion.div>
 

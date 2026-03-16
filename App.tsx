@@ -55,15 +55,70 @@ const App: React.FC = () => {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
+  const AnimatedCounter: React.FC<{ value: number; suffix: string; label: string }> = ({ value, suffix, label }) => {
+    const [count, setCount] = React.useState(0);
+    const [hasAnimated, setHasAnimated] = React.useState(false);
+    const ref = React.useRef<HTMLDivElement>(null);
+
+    React.useEffect(() => {
+      if (!ref.current || hasAnimated) return;
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          setHasAnimated(true);
+          const duration = 1800;
+          const steps = 60;
+          const increment = value / steps;
+          let current = 0;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= value) {
+              setCount(value);
+              clearInterval(timer);
+            } else {
+              setCount(Math.floor(current));
+            }
+          }, duration / steps);
+          observer.disconnect();
+        }
+      }, { threshold: 0.3 });
+      observer.observe(ref.current);
+      return () => observer.disconnect();
+    }, [value, hasAnimated]);
+
+    return (
+      <div ref={ref} className="text-center">
+        <div className="text-4xl md:text-5xl lg:text-6xl font-black text-gold mb-2">
+          {count}{suffix}
+        </div>
+        <div className="text-navy/60 font-bold text-sm md:text-base">{label}</div>
+      </div>
+    );
+  };
+
   const SuccessStories = ({ category: _category }: { category: string }) => {
     const items = [
       { src: '/assets/לקוחות מרוצים 1.webp', rotate: '-2deg' },
       { src: '/assets/לקוחות מרוצים 2.webp', rotate:  '1.5deg' },
       { src: '/assets/לקוחות מרוצים 3.webp', rotate:  '2deg' },
       { src: '/assets/לקוחות מרוצים 4.jpeg', rotate: '-1.5deg' },
+      { src: '/assets/happy-customers-5.webp', rotate: '1deg' },
+      { src: '/assets/happy-customers-6.webp', rotate: '-1.5deg' },
+      { src: '/assets/happy-customers-7.webp', rotate: '2deg' },
+      { src: '/assets/happy-customers-8.webp', rotate: '-2deg' },
+    ];
+    const stats = [
+      { value: 100, suffix: '+', label: 'עסקאות מוצלחות' },
+      { value: 75, suffix: '+', label: 'לקוחות מרוצים' },
+      { value: 5, suffix: '+', label: 'שנות פעילות' },
     ];
     return (
-      <div className="mt-16 grid grid-cols-2 gap-6 max-w-[75%] mx-auto">
+      <>
+      <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto mb-16 py-10 px-6 bg-white rounded-[3rem] border border-navy/5 shadow-xl shadow-navy/5">
+        {stats.map((stat, i) => (
+          <AnimatedCounter key={i} value={stat.value} suffix={stat.suffix} label={stat.label} />
+        ))}
+      </div>
+      <div className="mt-0 grid grid-cols-2 gap-6 max-w-[75%] mx-auto">
         {items.map((item, i) => (
           <motion.div
             key={i}
@@ -81,6 +136,7 @@ const App: React.FC = () => {
           </motion.div>
         ))}
       </div>
+      </>
     );
   };
 
@@ -188,7 +244,7 @@ const App: React.FC = () => {
                     { title: 'גיבוש הקבוצה', desc: 'איחוד משקיעים עם הון עצמי דומה ויעדים משותפים.', icon: <Users size={32} /> },
                     { title: 'איתור פרויקט פרי-סייל', desc: 'מציאת יזם המעוניין למכור כמות יחידות בהנחה.', icon: <Search size={32} />, image: '/assets/presale.webp' },
                     { title: 'מינוף כוח הקנייה', desc: 'ניהול מו״מ קבוצתי להשגת מחיר חסר תקדים.', icon: <Briefcase size={32} />, image: '/assets/buying-power.webp' },
-                    { title: 'ליווי מלא עד קבלת מפתח', desc: 'פיקוח ובקרה לאורך כל חיי הפרויקט.', icon: <Building size={32} /> }
+                    { title: 'ליווי מלא עד קבלת מפתח', desc: 'פיקוח ובקרה לאורך כל חיי הפרויקט.', icon: <Building size={32} />, image: '/assets/key-handover.webp' }
                   ]}
                   priceLabel="עמלת הצטרפות מופחתת למשקיעים"
                 />
