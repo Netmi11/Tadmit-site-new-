@@ -74,6 +74,14 @@ Vite לא מגיש קבצים מהשורש ב-production build.
 
 ---
 
+## כלל Git — חשוב מאוד!
+**אין לבצע `git push` ללא אישור מפורש מהמשתמש.**
+זה חל על כל אנשי הצוות וכל סוכן AI שעובד על הפרויקט.
+- מותר: `git add`, `git commit`, `git status`, `git diff`, `git log`
+- אסור ללא אישור: `git push`, `git push --force`, כל פעולה שדוחפת לרימוט
+
+---
+
 ## הערת פיתוח חשובה
 **Edit tool נכשל על קבצים בתיקיות עם שם עברי** (כמו `components/`).
 לעריכת קבצים אלו — להשתמש ב-Python script דרך Bash tool.

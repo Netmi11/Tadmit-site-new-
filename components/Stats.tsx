@@ -2,14 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { STATS } from '../constants';
-
-const CountUp: React.FC<{ value: string; suffix?: string }> = ({ value, suffix }) => {
-  return (
-    <span className="font-inter">
-      {value}{suffix}
-    </span>
-  );
-};
+import CountUp from './CountUp';
 
 const Stats: React.FC = () => {
   return (
@@ -42,8 +35,14 @@ const Stats: React.FC = () => {
               transition={{ delay: idx * 0.1 }}
               className={`text-center relative ${idx !== STATS.length - 1 ? 'lg:border-l border-gold/20' : ''}`}
             >
-              <div className="text-5xl md:text-7xl lg:text-8xl font-black text-navy mb-4 tracking-tighter">
-                <CountUp value={stat.value} suffix={stat.suffix} />
+              <div className="text-5xl md:text-7xl lg:text-8xl font-black text-navy mb-4 tracking-tighter font-inter">
+                <CountUp
+                  to={parseInt(stat.value)}
+                  duration={2.5}
+                  delay={idx * 0.15}
+                  className="font-inter"
+                />
+                {stat.suffix && <span>{stat.suffix}</span>}
               </div>
               <p className="text-gold font-black text-lg md:text-xl leading-tight max-w-[150px] mx-auto">
                 {stat.label}

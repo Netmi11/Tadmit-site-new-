@@ -210,7 +210,6 @@ const IsraeliMap: React.FC = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.3 + i * 0.07 }}
-                      onMouseEnter={() => setActive(city.id)}
                       onClick={() => setActive(active === city.id ? null : city.id)}
                       className="flex flex-col rounded-[1.4rem] cursor-pointer relative overflow-hidden"
                       style={{

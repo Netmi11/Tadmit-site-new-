@@ -22,6 +22,8 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfUse from './components/TermsOfUse';
 import AccessibilityStatement from './components/AccessibilityStatement';
 import { motion, AnimatePresence } from 'framer-motion';
+import CircularGallery from './components/CircularGallery';
+import CountUp from './components/CountUp';
 import {
   FileText, Download, MessageCircle, Phone, Mail, Play,
   CheckCircle, Shield, Briefcase, Users, History, Gem, Handshake,
@@ -113,28 +115,25 @@ const App: React.FC = () => {
     ];
     return (
       <>
-      <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto mb-16 py-10 px-6 bg-white rounded-[3rem] border border-navy/5 shadow-xl shadow-navy/5">
+      <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto mb-16 py-10 px-6 bg-white/5 backdrop-blur-sm rounded-[3rem] border border-white/10 shadow-xl">
         {stats.map((stat, i) => (
-          <AnimatedCounter key={i} value={stat.value} suffix={stat.suffix} label={stat.label} />
+          <div key={i} className="text-center">
+            <div className="text-4xl md:text-5xl lg:text-6xl font-black text-gold mb-2 font-inter">
+              <CountUp to={stat.value} duration={2.5} delay={i * 0.15} className="font-inter" />
+              <span>{stat.suffix}</span>
+            </div>
+            <div className="text-white/70 font-bold text-sm md:text-base">{stat.label}</div>
+          </div>
         ))}
       </div>
-      <div className="mt-0 grid grid-cols-2 gap-6 max-w-[75%] mx-auto">
-        {items.map((item, i) => (
-          <motion.div
-            key={i}
-            whileHover={{ rotate: 0, scale: 1.03, zIndex: 10 }}
-            transition={{ duration: 0.3 }}
-            style={{ rotate: item.rotate }}
-            className="relative rounded-2xl overflow-hidden border-4 border-white shadow-2xl shadow-navy/15 aspect-[4/3] cursor-pointer"
-          >
-            <img
-              src={item.src}
-              alt={`לקוח מרוצה ${i + 1}`}
-              loading="lazy"
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-        ))}
+      <div style={{ height: '500px' }}>
+        <CircularGallery
+          items={items.map(item => ({ image: item.src }))}
+          bend={3}
+          borderRadius={0.05}
+          scrollSpeed={2}
+          scrollEase={0.05}
+        />
       </div>
       </>
     );
@@ -150,26 +149,6 @@ const App: React.FC = () => {
               subtitle="ליווי מקצועי מבוסס נתונים, מותאם אישית לצרכים ולתקציב שלך. אנחנו לא רק מוצאים נכס — אנחנו מוודאים שתרכוש נכון, במחיר נכון, עם מינימום סיכון."
               badge="המסלול האישי"
             />
-
-            <section className="py-24 bg-offwhite">
-              <div className="container mx-auto px-6 max-w-6xl text-center">
-                <h2 className="text-4xl md:text-5xl font-black text-navy mb-12">איך זה עובד?</h2>
-                <div className="aspect-video bg-navy rounded-[3rem] mb-8 overflow-hidden relative shadow-3xl flex items-center justify-center border-8 border-white group cursor-pointer">
-                  <Play className="text-gold relative z-10 group-hover:scale-110 transition-transform" size={80} />
-                  <div className="absolute inset-0 bg-navy/40" />
-                  <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-30" />
-                </div>
-                <p className="text-navy/60 font-bold text-xl">צפו בסרטון קצר שמסביר את תהליך הליווי שלנו</p>
-                <div className="mt-8">
-                  <button
-                    onClick={() => navigateTo('contact-page')}
-                    className="bg-gold text-navy px-12 py-5 rounded-2xl font-black text-xl hover:scale-105 transition-transform inline-block shadow-xl shadow-gold/20"
-                  >
-                    לייעוץ אובייקטיבי לחץ כאן
-                  </button>
-                </div>
-              </div>
-            </section>
 
             <section className="py-24 bg-white">
               <div className="container mx-auto px-6 max-w-6xl">
@@ -213,9 +192,29 @@ const App: React.FC = () => {
               </div>
             </section>
 
-            <section className="py-24 bg-white">
-              <div className="container mx-auto px-6 max-w-6xl">
-                <h2 className="text-4xl md:text-5xl font-black text-navy text-center mb-16">סיפורי הצלחה</h2>
+            <section className="py-24 bg-navy relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gold/5 blur-[140px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+              <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gold/5 blur-[160px] rounded-full translate-x-1/3 translate-y-1/3 pointer-events-none" />
+              <div className="container mx-auto px-6 max-w-6xl relative z-10">
+                <div className="text-center mb-16">
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="text-gold font-black tracking-[0.4em] uppercase text-sm block mb-4"
+                  >
+                    הצלחות שמדברות בעד עצמן
+                  </motion.span>
+                  <motion.h2
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter mb-6"
+                  >
+                    סיפורי הצלחה
+                  </motion.h2>
+                  <div className="w-24 h-2 bg-gold mx-auto rounded-full shadow-lg shadow-gold/20" />
+                </div>
                 <SuccessStories category="ליווי אישי" />
               </div>
             </section>
@@ -266,26 +265,28 @@ const App: React.FC = () => {
               subtitle="אנחנו מאמינים בשקיפות ושיתוף ידע. כאן תמצאו את הכלים להפוך למשקיעים טובים יותר."
               badge="ערך מוסף"
             />
-            <section className="py-24 bg-white">
-              <div className="container mx-auto px-6 max-w-5xl">
-                <div className="grid md:grid-cols-2 gap-8">
-                  {[
-                    { title: 'המדריך למשקיע המתחיל', size: 'PDF 4.2MB', date: '2024' },
-                    { title: 'צק ליסט לבדיקת נכס', size: 'DOCX 1.1MB', date: '2023' },
-                    { title: 'טבלת תשואות ארצית', size: 'Excel 500KB', date: '2024' },
-                    { title: 'כתבת: איך למנף משכנתא', size: 'PDF 2.0MB', date: '2024' }
-                  ].map((doc, idx) => (
-                    <div key={idx} className="p-8 bg-offwhite rounded-[2rem] flex items-center justify-between border border-navy/5 group hover:bg-navy hover:text-white transition-all duration-500">
-                      <div className="bg-navy group-hover:bg-gold p-4 rounded-xl text-white group-hover:text-navy transition-colors">
-                        <Download size={24} />
-                      </div>
-                      <div className="text-right">
-                        <h4 className="text-xl font-black mb-1">{doc.title}</h4>
-                        <p className="text-sm opacity-50">{doc.size} • {doc.date}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+            <section className="py-24 bg-offwhite">
+              <div className="container mx-auto px-6 max-w-3xl text-center">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="bg-white rounded-[3rem] border border-navy/8 shadow-xl shadow-navy/5 px-10 py-16"
+                >
+                  <div className="w-20 h-20 bg-gold/10 rounded-3xl flex items-center justify-center mx-auto mb-8">
+                    <FileText className="text-gold" size={36} />
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-black text-navy mb-4">העמוד בבנייה</h2>
+                  <p className="text-xl text-navy/60 font-medium leading-relaxed mb-8">
+                    אנחנו עובדים על תוכן איכותי עבורכם — מדריכים, כלים ומשאבים שיעזרו לכם להשקיע חכם יותר.
+                    <br />
+                    <span className="text-gold font-black">יהיה מוכן בקרוב!</span>
+                  </p>
+                  <div className="inline-flex items-center gap-3 px-6 py-3 bg-gold/10 border border-gold/20 rounded-full">
+                    <div className="w-2 h-2 bg-gold rounded-full animate-pulse" />
+                    <span className="text-navy font-black text-sm tracking-widest uppercase">בעבודה</span>
+                  </div>
+                </motion.div>
               </div>
             </section>
             <ROICalculator />

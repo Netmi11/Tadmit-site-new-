@@ -1,8 +1,9 @@
-﻿
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Send, ShieldCheck } from 'lucide-react';
-import Logo from './Logo';
+import Aurora from './Aurora';
+import TiltedCard from './TiltedCard';
 
 interface HeroProps {
   navigateTo: (page: string) => void;
@@ -11,8 +12,16 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-offwhite">
-      {/* Background elements - Israeli architectural vibe */}
-      {/* Background elements - Israeli architectural vibe */}
+      {/* Aurora background */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <Aurora
+          colorStops={['#1B3A5C', '#D4AF37', '#1B3A5C']}
+          amplitude={1.2}
+          blend={0.6}
+          speed={0.4}
+        />
+      </div>
+
       <div className="absolute top-0 right-0 w-1/2 h-full bg-navy/5 -skew-x-12 transform translate-x-1/4" />
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-gold/5 rounded-full blur-[120px] opacity-60" />
       <div className="absolute top-1/4 -right-24 w-[30rem] h-[30rem] bg-navy/5 rounded-full blur-[140px]" />
@@ -34,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
             <span className="text-gold">מאינטרסים חבויים</span>
           </h1>
           <p className="text-xl md:text-2xl text-navy/70 leading-relaxed mb-10 max-w-xl">
-            מומחי נדל"ן. נציגי קונים בלעדיים.
+            מומחי נדל&quot;ן. נציגי קונים בלעדיים.
 צמד ברזל — ניתוח שוק מעמיק, עסקאות מדויקות, 100% נאמנות לאינטרס שלך.
 עם ניסיון של 100+ עסקאות ו-5 שנות ליווי מקצועי — אנחנו יודעים בדיוק מה לחפש, ומה להימנע ממנו.
 דוגלים בשקיפות מלאה לאורך כל התהליך.
@@ -64,19 +73,26 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
           style={{ willChange: 'transform, opacity' }}
           className="relative order-1 lg:order-2 flex items-center justify-center"
         >
-          <div className="relative z-10 rounded-[4rem] overflow-hidden shadow-2xl border-8 md:border-[12px] border-white aspect-[4/4.5] max-w-[360px] sm:max-w-[440px] lg:max-w-[480px] mx-auto group">
-            <img
-              src="/assets/hero.webp"
-              alt="צמד ברזל - ליווי נדלן"
-              fetchPriority="high"
-              decoding="async"
-              className="w-full h-full object-cover scale-[1.04] transition-transform duration-700 group-hover:scale-[1.09]"
+          <div
+            className="relative z-10 max-w-[360px] sm:max-w-[440px] lg:max-w-[480px] mx-auto w-full"
+            style={{ height: '520px' }}
+          >
+            <TiltedCard
+              imageSrc="/assets/hero.webp"
+              altText="צמד ברזל - ליווי נדלן"
+              containerHeight="100%"
+              containerWidth="100%"
+              imageHeight="100%"
+              imageWidth="100%"
+              rotateAmplitude={8}
+              scaleOnHover={1.04}
             />
           </div>
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute -top-12 -right-12 w-48 h-48 border border-gold/10 rounded-full -z-10" style={{ willChange: "transform" }}
+            className="absolute -top-12 -right-12 w-48 h-48 border border-gold/10 rounded-full -z-10"
+            style={{ willChange: "transform" }}
           />
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-gold/10 rounded-full blur-[100px] -z-10 animate-pulse" />
         </motion.div>
