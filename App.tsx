@@ -241,7 +241,7 @@ const App: React.FC = () => {
                 <h2 className="text-4xl md:text-5xl font-black text-navy text-center mb-16">תהליך קבוצת הרוכשים</h2>
                 <Timeline
                   steps={[
-                    { title: 'גיבוש הקבוצה', desc: 'איחוד משקיעים עם הון עצמי דומה ויעדים משותפים.', icon: <Users size={32} /> },
+                    { title: 'גיבוש הקבוצה', desc: 'איחוד משקיעים עם הון עצמי דומה ויעדים משותפים.', icon: <Users size={32} />, image: '/assets/group-formation.webp' },
                     { title: 'איתור פרויקט פרי-סייל', desc: 'מציאת יזם המעוניין למכור כמות יחידות בהנחה.', icon: <Search size={32} />, image: '/assets/presale.webp' },
                     { title: 'מינוף כוח הקנייה', desc: 'ניהול מו״מ קבוצתי להשגת מחיר חסר תקדים.', icon: <Briefcase size={32} />, image: '/assets/buying-power.webp' },
                     { title: 'ליווי מלא עד קבלת מפתח', desc: 'פיקוח ובקרה לאורך כל חיי הפרויקט.', icon: <Building size={32} />, image: '/assets/key-handover.webp' }
