@@ -74,7 +74,7 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
           className="relative order-1 lg:order-2 flex items-center justify-center"
         >
           <div
-            className="relative z-10 max-w-[428px] sm:max-w-[524px] lg:max-w-[571px] mx-auto w-full translate-x-[30px]"
+            className="relative z-10 max-w-[428px] sm:max-w-[524px] lg:max-w-[571px] mx-auto w-full lg:translate-x-[30px]"
             style={{ aspectRatio: '4/3' }}
           >
             <TiltedCard
