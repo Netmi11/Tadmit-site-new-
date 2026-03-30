@@ -61,7 +61,7 @@ export default function CookieConsent({ onNavigate }: CookieConsentProps) {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-          className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 md:max-w-md z-[9999] bg-white rounded-2xl shadow-2xl shadow-navy/15 border border-navy/10 p-6"
+          className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 md:max-w-md z-[9999] bg-white rounded-2xl shadow-2xl shadow-navy/15 border border-navy/10 p-4 md:p-6"
           dir="rtl"
         >
           <button
@@ -72,13 +72,13 @@ export default function CookieConsent({ onNavigate }: CookieConsentProps) {
             <X size={18} />
           </button>
 
-          <div className="flex items-start gap-4">
-            <div className="w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+          <div className="flex items-start gap-3 md:gap-4">
+            <div className="w-8 h-8 md:w-10 md:h-10 bg-gold/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
               <Cookie className="text-gold" size={20} />
             </div>
             <div>
               <h3 className="text-navy font-black text-base mb-1">האתר משתמש בעוגיות</h3>
-              <p className="text-navy/60 text-sm leading-relaxed mb-4">
+              <p className="text-navy/60 text-xs md:text-sm leading-relaxed mb-3 md:mb-4">
                 אנו משתמשים בעוגיות לצורך ניתוח תנועה ושיפור חוויית הגלישה.{' '}
                 <button
                   onClick={() => { onNavigate('privacy'); setVisible(false); }}

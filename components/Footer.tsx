@@ -84,6 +84,8 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <button onClick={() => onNavigate('accessibility')} className="hover:text-gold transition-colors">הצהרת נגישות</button>
           </div>
         </div>
+
+        <p className="text-white/20 text-[10px] text-left mt-4">© בניית אתר — נתנאל מילר</p>
       </div>
     </footer>
   );

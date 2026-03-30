@@ -246,7 +246,7 @@ const App: React.FC = () => {
                     { title: 'מינוף כוח הקנייה', desc: 'ניהול מו״מ קבוצתי להשגת מחיר חסר תקדים.', icon: <Briefcase size={32} />, image: '/assets/buying-power.webp' },
                     { title: 'ליווי מלא עד קבלת מפתח', desc: 'פיקוח ובקרה לאורך כל חיי הפרויקט.', icon: <Building size={32} />, image: '/assets/key-handover.webp' }
                   ]}
-                  priceLabel="עמלת הצטרפות מופחתת למשקיעים"
+                  priceLabel="דברו איתנו"
                 />
               </div>
             </section>

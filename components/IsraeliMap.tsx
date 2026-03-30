@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, TrendingUp, Home, Building2 } from 'lucide-react';
+import { MapPin, Home, Building2 } from 'lucide-react';
 
 const LeafletMap = lazy(() => import('./LeafletMap'));
 
@@ -12,7 +12,6 @@ export interface CityData {
   deals: number;
   desc: string;
   highlights: string[];
-  trendPercent: number;
   color: string;
 }
 
@@ -20,56 +19,47 @@ export const CITIES: CityData[] = [
   {
     id: 'telaviv', name: 'תל אביב', lng: 34.781, lat: 32.085, deals: 25,
     desc: 'פרי-סייל וליווי אישי',
-    highlights: ['פרי-סייל בלעדי', 'נכסי יוקרה', 'השקעות פרימיום'],
-    trendPercent: 15.1, color: '#0077b6'
+    highlights: ['לקוחות חוץ', 'נכסי יוקרה', 'השקעות פרימיום'], color: '#0077b6'
   },
   {
     id: 'ramatgan', name: 'רמת גן', lng: 34.820, lat: 32.082, deals: 18,
     desc: 'בירה ושכונות מושכות',
-    highlights: ['קרבת תל אביב', 'בורסה ועסקים', 'פרויקטים חדשים'],
-    trendPercent: 13.2, color: '#48cae4'
+    highlights: ['קרבת תל אביב', 'בורסה ועסקים', 'פרויקטים חדשים'], color: '#48cae4'
   },
   {
     id: 'givataim', name: 'גבעתיים', lng: 34.812, lat: 32.066, deals: 14,
     desc: 'עיר בותיקה עם גיבוי עצום',
-    highlights: ['שכונות יוקרתיות', 'שדרות פופולריים', 'ביקוש גבוה'],
-    trendPercent: 11.8, color: '#023e8a'
+    highlights: ['שכונות יוקרתיות', 'שדרות פופולריים', 'ביקוש גבוה'], color: '#023e8a'
   },
   {
     id: 'holon', name: 'חולון', lng: 34.779, lat: 31.997, deals: 16,
     desc: 'עיר צמיחה עם תשואה אטרקטיבית',
-    highlights: ['מחיר נגיש', 'פרויקטי התחדשות', 'קרבת תחבורת'],
-    trendPercent: 10.5, color: '#4cc9f0'
+    highlights: ['מחיר נגיש', 'פרויקטי התחדשות', 'קרבת תחבורת'], color: '#4cc9f0'
   },
   {
     id: 'batayam', name: 'בת ים', lng: 34.749, lat: 31.999, deals: 12,
     desc: 'קו ראשון לים במחיר נגיש',
-    highlights: ['קו ראשון לים', 'שכונות מתחדשות', 'תשואה גבוהה'],
-    trendPercent: 12.1, color: '#90e0ef'
+    highlights: ['קו ראשון לים', 'שכונות מתחדשות', 'תשואה גבוהה'], color: '#90e0ef'
   },
   {
-    id: 'petahtikva', name: 'פתח תקווה', lng: 34.888, lat: 32.086, deals: 20,
+    id: 'petahtikva', name: 'פתח תקווה', lng: 34.888, lat: 32.086, deals: 8,
     desc: 'עיר ביקוש עם עתיד מבטיח',
-    highlights: ['תשואה 5%+', 'שכונות חדשות', 'מרכז הייטק'],
-    trendPercent: 11.4, color: '#0096c7'
+    highlights: ['שכונות חדשות', 'מרכז הייטק'], color: '#0096c7'
   },
   {
     id: 'herzliya', name: 'הרצליה', lng: 34.845, lat: 32.163, deals: 17,
     desc: 'יוקרה והייטק לאורך החוף',
-    highlights: ['נכסי יוקרה', 'הייטק והישטארטאפ', 'קו ראשון לים'],
-    trendPercent: 13.7, color: '#1e6091'
+    highlights: ['נכסי יוקרה', 'הייטק והישטארטאפ', 'קו ראשון לים'], color: '#1e6091'
   },
   {
-    id: 'beersheva', name: 'באר שבע', lng: 34.791, lat: 31.252, deals: 20,
+    id: 'beersheva', name: 'באר שבע', lng: 34.791, lat: 31.252, deals: 35,
     desc: 'השקעות סטודנטים ואקדמאים',
-    highlights: ['קרבה לאוניברסיטה', 'תשואה 6%+', 'ביקוש שכירות גבוה'],
-    trendPercent: 14.8, color: '#caf0f8'
+    highlights: ['קרבה לאוניברסיטה', 'ביקוש שכירות גבוה'], color: '#caf0f8'
   },
   {
     id: 'netivot', name: 'נתיבות', lng: 34.589, lat: 31.418, deals: 10,
     desc: 'הזדמנות בעיר המתפתחת',
-    highlights: ['מחיר נגיש מאוד', 'צמיחה מערכתית', 'תשואה גבוהה'],
-    trendPercent: 16.2, color: '#2980b9'
+    highlights: ['מחיר נגיש מאוד', 'צמיחה מערכתית', 'תשואה גבוהה'], color: '#2980b9'
   },
 ];
 
@@ -194,6 +184,10 @@ const IsraeliMap: React.FC = () => {
                       <p className="font-black text-lg text-white/90 leading-tight">{city.name}</p>
                       <p className="text-sm text-white/40 mt-0.5 truncate">{city.desc}</p>
                     </div>
+                    <span className="text-xs font-black px-2.5 py-1 rounded-full flex-shrink-0"
+                      style={{ background: `${city.color}22`, color: city.color }}>
+                      {city.deals} עסקאות
+                    </span>
                   </motion.div>
                 ))}
               </div>
@@ -270,10 +264,7 @@ const IsraeliMap: React.FC = () => {
                               style={{ background: `${city.color}22`, color: city.color, border: `1px solid ${city.color}30` }}>
                               {city.deals} עסקאות מוצלחות
                             </span>
-                            <span className="flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/20">
-                              <TrendingUp size={11} />
-                              +{city.trendPercent}% עליית ערך
-                            </span>
+
                           </div>
                           <div className="flex flex-wrap gap-1 justify-end">
                             {city.highlights.map((h, idx) => (

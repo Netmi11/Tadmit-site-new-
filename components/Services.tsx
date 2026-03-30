@@ -116,7 +116,7 @@ const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
                   className="inline-flex items-center gap-4 text-gold font-black text-xl lg:text-2xl group/btn transition-all duration-300"
                 >
                   גלו עוד על המסלול
-                  <ArrowRight className="rotate-180 transform group-hover/btn:translate-x-[-8px] transition-transform" size={28} />
+                  <ArrowRight className="transform group-hover/btn:translate-x-[8px] transition-transform" size={28} />
                 </button>
               </div>
               </div>

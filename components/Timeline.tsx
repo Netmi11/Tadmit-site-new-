@@ -115,11 +115,11 @@ const Timeline: React.FC<TimelineProps> = ({ steps, priceLabel }) => {
             <div className="absolute inset-0 bg-gold rounded-[4rem] blur-2xl opacity-20 animate-pulse" />
             <div className="relative bg-navy text-white px-20 py-12 rounded-[3.5rem] border-2 border-gold/30 shadow-3xl overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-              <p className="text-gold font-black uppercase tracking-[0.5em] text-xs mb-4">השקעה בביטחון שלכם</p>
+              <p className="text-gold font-black uppercase tracking-[0.5em] text-xs mb-4">רוצים לשמוע עוד?</p>
               <p className="text-4xl md:text-6xl font-black tracking-tight">{priceLabel}</p>
               <div className="mt-8 flex items-center justify-center gap-2 text-white/40">
                 <div className="w-2 h-2 rounded-full bg-gold" />
-                <span className="text-sm font-bold">ליווי מקצועי ללא פשרות</span>
+                <span className="text-sm font-bold">צמד ברזל</span>
                 <div className="w-2 h-2 rounded-full bg-gold" />
               </div>
             </div>
