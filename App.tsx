@@ -1,30 +1,31 @@
 
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Stats from './components/Stats';
-import Services from './components/Services';
-import Team from './components/Team';
-import MilitaryLectures from './components/MilitaryLectures';
-import MissionVision from './components/MissionVision';
-import Testimonials from './components/Testimonials';
-import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
-import AccessibilityWidget from './components/AccessibilityWidget';
 import CookieConsent from './components/CookieConsent';
-import IsraeliMap from './components/IsraeliMap';
-import Timeline from './components/Timeline';
-import SubPageHero from './components/SubPageHero';
-import Logo from './components/Logo';
-import FAQ from './components/FAQ';
-import ROICalculator from './components/ROICalculator';
-import PrivacyPolicy from './components/PrivacyPolicy';
-import TermsOfUse from './components/TermsOfUse';
-import AccessibilityStatement from './components/AccessibilityStatement';
 import { motion, AnimatePresence } from 'framer-motion';
-import CircularGallery from './components/CircularGallery';
-import CountUp from './components/CountUp';
+
+// Lazy load components not needed for initial paint
+const Stats = lazy(() => import('./components/Stats'));
+const Services = lazy(() => import('./components/Services'));
+const Team = lazy(() => import('./components/Team'));
+const MilitaryLectures = lazy(() => import('./components/MilitaryLectures'));
+const MissionVision = lazy(() => import('./components/MissionVision'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const ContactForm = lazy(() => import('./components/ContactForm'));
+const AccessibilityWidget = lazy(() => import('./components/AccessibilityWidget'));
+const IsraeliMap = lazy(() => import('./components/IsraeliMap'));
+const Timeline = lazy(() => import('./components/Timeline'));
+const SubPageHero = lazy(() => import('./components/SubPageHero'));
+const FAQ = lazy(() => import('./components/FAQ'));
+const ROICalculator = lazy(() => import('./components/ROICalculator'));
+const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
+const TermsOfUse = lazy(() => import('./components/TermsOfUse'));
+const AccessibilityStatement = lazy(() => import('./components/AccessibilityStatement'));
+const CircularGallery = lazy(() => import('./components/CircularGallery'));
+const CountUp = lazy(() => import('./components/CountUp'));
 import {
   FileText, Download, MessageCircle, Phone, Mail, Play,
   CheckCircle, Shield, Briefcase, Users, History, Gem, Handshake,
@@ -147,14 +148,14 @@ const App: React.FC = () => {
           <motion.div key="personal" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             <SubPageHero
               title="ליווי אישי"
-              subtitle="ליווי מקצועי מבוסס נתונים, מותאם אישית לצרכים ולתקציב שלך. אנחנו לא רק מוצאים נכס — אנחנו מוודאים שתרכוש נכון, במחיר נכון, עם מינימום סיכון."
+              subtitle="ליווי מקצועי מבוסס נתונים, מותאם אישית לצרכים ולתקציב שלך. אנחנו לא רק מוצאים נכס - אנחנו מוודאים שתרכוש נכון, במחיר נכון, עם מינימום סיכון."
               badge="המסלול האישי"
             />
 
             <section className="py-24 bg-white">
               <div className="container mx-auto px-6 max-w-6xl">
                 <div className="text-center mb-16">
-                  <h2 className="text-4xl md:text-5xl font-black text-navy mb-4">התהליך שלנו — צעד אחרי צעד</h2>
+                  <h2 className="text-4xl md:text-5xl font-black text-navy mb-4">התהליך שלנו - צעד אחרי צעד</h2>
                   <div className="w-24 h-1.5 bg-gold mx-auto rounded-full" />
                 </div>
 
@@ -177,11 +178,11 @@ const App: React.FC = () => {
                 <div className="grid md:grid-cols-3 gap-8">
                   {[
                     { icon: <Search size={32} />, title: 'ניתוח שוק מעמיק', desc: 'בחינת מגמות, מחירי עסקאות ופוטנציאל עליית ערך לפי אזור.' },
-                    { icon: <Target size={32} />, title: 'חיפוש אקטיבי בשטח', desc: 'לא מחכים שנכסים יגיעו — יוצאים לאתר הזדמנויות לפני כולם.' },
+                    { icon: <Target size={32} />, title: 'חיפוש אקטיבי בשטח', desc: 'לא מחכים שנכסים יגיעו - יוצאים לאתר הזדמנויות לפני כולם.' },
                     { icon: <Handshake size={32} />, title: 'מו"מ מקצועי בשמך', desc: 'ניהול משא ומתן מול מוכרים ויזמים להשגת המחיר ותנאים הטובים ביותר.' },
-                    { icon: <Briefcase size={32} />, title: 'ליווי פיננסי ומשפטי', desc: 'תיאום וליווי מול עו"ד, יועץ משכנתא ושמאי — הכל תחת קורת גג אחת.' },
+                    { icon: <Briefcase size={32} />, title: 'ליווי פיננסי ומשפטי', desc: 'תיאום וליווי מול עו"ד, יועץ משכנתא ושמאי - הכל תחת קורת גג אחת.' },
                     { icon: <Shield size={32} />, title: 'שקיפות מלאה', desc: 'כל נכס שנבדק מגיע עם דו"ח: מה מצאנו, למה כן/לא, ומה ההמלצה.' },
-                    { icon: <Gem size={32} />, title: 'מיקוד ברווח מיום הקנייה', desc: 'מחפשים עסקאות עם פוטנציאל רווח כבר ביום הרכישה — לא "קנייה ממוצעת".' }
+                    { icon: <Gem size={32} />, title: 'מיקוד ברווח מיום הקנייה', desc: 'מחפשים עסקאות עם פוטנציאל רווח כבר ביום הרכישה - לא "קנייה ממוצעת".' }
                   ].map((item, idx) => (
                     <div key={idx} className="p-10 bg-white rounded-[2.5rem] shadow-sm border border-navy/5 hover:shadow-xl transition-all duration-300 text-right">
                       <div className="text-gold mb-6">{item.icon}</div>
@@ -279,7 +280,7 @@ const App: React.FC = () => {
                   </div>
                   <h2 className="text-3xl md:text-4xl font-black text-navy mb-4">העמוד בבנייה</h2>
                   <p className="text-xl text-navy/60 font-medium leading-relaxed mb-8">
-                    אנחנו עובדים על תוכן איכותי עבורכם — מדריכים, כלים ומשאבים שיעזרו לכם להשקיע חכם יותר.
+                    אנחנו עובדים על תוכן איכותי עבורכם - מדריכים, כלים ומשאבים שיעזרו לכם להשקיע חכם יותר.
                     <br />
                     <span className="text-gold font-black">יהיה מוכן בקרוב!</span>
                   </p>
@@ -321,7 +322,7 @@ const App: React.FC = () => {
                         עמית ונעם, קצינים במילואים, הקימו את ״צמד ברזל״ מתוך הבנה ששוק הנדל״ן הישראלי צמא לאמינות, שקיפות ומקצועיות ללא פשרות.
                       </p>
                       <p>
-                        לאחר שנים של פיקוד והובלת מערכות מורכבות, החלטנו לקחת את הערכים שעליהם גדלנו – דייקנות, אחריות, תכנון מקדים וחתירה למגע – וליישם אותם בעולם הנדל״ן. אנחנו מאמינים שקניית דירה היא לא רק עסקה כלכלית, אלא החלטה של פעם בחיים שדורשת שותפים לדרך שאפשר לסמוך עליהם בעיניים עצומות.
+                        לאחר שנים של פיקוד והובלת מערכות מורכבות, החלטנו לקחת את הערכים שעליהם גדלנו - דייקנות, אחריות, תכנון מקדים וחתירה למגע - וליישם אותם בעולם הנדל״ן. אנחנו מאמינים שקניית דירה היא לא רק עסקה כלכלית, אלא החלטה של פעם בחיים שדורשת שותפים לדרך שאפשר לסמוך עליהם בעיניים עצומות.
                       </p>
                       <p>
                         ״צמד ברזל״ נולד מתוך רצון לשנות את כללי המשחק. לתת ללקוחות שלנו את השקט הנפשי והביטחון שהם נמצאים בידיים הטובות ביותר, בדיוק כמו בשדה הקרב.
@@ -461,9 +462,11 @@ const App: React.FC = () => {
       <Navbar onNavigate={navigateTo} currentPage={currentPage} />
 
       <main>
-        <AnimatePresence mode="wait">
-          {renderPage()}
-        </AnimatePresence>
+        <Suspense fallback={<div className="min-h-screen bg-offwhite" />}>
+          <AnimatePresence mode="wait">
+            {renderPage()}
+          </AnimatePresence>
+        </Suspense>
       </main>
 
       <Footer onNavigate={navigateTo} />

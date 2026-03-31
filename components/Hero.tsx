@@ -1,8 +1,6 @@
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { ChevronDown, Send, ShieldCheck } from 'lucide-react';
-import Aurora from './Aurora';
 import TiltedCard from './TiltedCard';
 
 interface HeroProps {
@@ -12,27 +10,15 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-offwhite">
-      {/* Aurora background */}
-      <div className="absolute inset-0 opacity-30 pointer-events-none">
-        <Aurora
-          colorStops={['#1B3A5C', '#D4AF37', '#1B3A5C']}
-          amplitude={1.2}
-          blend={0.6}
-          speed={0.4}
-        />
-      </div>
+      {/* Aurora background - temporarily disabled for performance testing */}
 
       <div className="absolute top-0 right-0 w-1/2 h-full bg-navy/5 -skew-x-12 transform translate-x-1/4" />
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-gold/5 rounded-full blur-[120px] opacity-60" />
       <div className="absolute top-1/4 -right-24 w-[30rem] h-[30rem] bg-navy/5 rounded-full blur-[140px]" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          style={{ willChange: 'transform, opacity' }}
-          className="order-2 lg:order-1 text-right"
+        <div
+          className="order-2 lg:order-1 text-right animate-[fadeInUp_0.8s_ease-out_both]"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gold/10 border border-gold/20 rounded-full mb-6">
             <ShieldCheck className="text-gold" size={16} />
@@ -44,8 +30,8 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
           </h1>
           <p className="text-xl md:text-2xl text-navy/70 leading-relaxed mb-10 max-w-xl">
             מומחי נדל&quot;ן. נציגי קונים בלעדיים.
-צמד ברזל — ניתוח שוק מעמיק, עסקאות מדויקות, 100% נאמנות לאינטרס שלך.
-עם ניסיון של 100+ עסקאות ו-5 שנות ליווי מקצועי — אנחנו יודעים בדיוק מה לחפש, ומה להימנע ממנו.
+צמד ברזל - ניתוח שוק מעמיק, עסקאות מדויקות, 100% נאמנות לאינטרס שלך.
+עם ניסיון של 100+ עסקאות ו-5 שנות ליווי מקצועי - אנחנו יודעים בדיוק מה לחפש, ומה להימנע ממנו.
 דוגלים בשקיפות מלאה לאורך כל התהליך.
           </p>
 
@@ -64,14 +50,10 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
               המסלול לליווי אישי
             </button>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          style={{ willChange: 'transform, opacity' }}
-          className="relative order-1 lg:order-2 flex items-center justify-center"
+        <div
+          className="relative order-1 lg:order-2 flex items-center justify-center animate-[fadeIn_1s_ease-out_0.2s_both]"
         >
           <div
             className="relative z-10 max-w-[428px] sm:max-w-[524px] lg:max-w-[571px] mx-auto w-full lg:translate-x-[30px]"
@@ -88,23 +70,14 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
               scaleOnHover={1.04}
             />
           </div>
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute -top-12 -right-12 w-48 h-48 border border-gold/10 rounded-full -z-10"
-            style={{ willChange: "transform" }}
-          />
+          <div className="absolute -top-12 -right-12 w-48 h-48 border border-gold/10 rounded-full -z-10 animate-[spin_20s_linear_infinite]" />
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-gold/10 rounded-full blur-[100px] -z-10 animate-pulse" />
-        </motion.div>
+        </div>
       </div>
 
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-navy/30 hidden lg:block"
-      >
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-navy/30 hidden lg:block animate-bounce">
         <ChevronDown size={40} />
-      </motion.div>
+      </div>
     </section>
   );
 };

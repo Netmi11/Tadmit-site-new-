@@ -41,6 +41,16 @@ p, li, button, span {
   animation: scroll 30s linear infinite;
 }
 
+/* Hero entrance animations (CSS-only, no JS overhead) */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* Accessibility Widget */
 html.a11y-font-lg { font-size: 110%; }
 html.a11y-font-xl { font-size: 125%; }

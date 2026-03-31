@@ -23,23 +23,23 @@ export const CITIES: CityData[] = [
   },
   {
     id: 'ramatgan', name: 'רמת גן', lng: 34.820, lat: 32.082, deals: 18,
-    desc: 'בירה ושכונות מושכות',
-    highlights: ['קרבת תל אביב', 'בורסה ועסקים', 'פרויקטים חדשים'], color: '#48cae4'
+    desc: 'קו שני לתל אביב, אוכלוסייה מצוינת',
+    highlights: ['בקרבה לתל אביב', 'בורסה ועסקים', 'פרויקטים חדשים'], color: '#48cae4'
   },
   {
     id: 'givataim', name: 'גבעתיים', lng: 34.812, lat: 32.066, deals: 14,
-    desc: 'עיר בותיקה עם גיבוי עצום',
+    desc: 'חיי לילה והתחדשות עירונית',
     highlights: ['שכונות יוקרתיות', 'שדרות פופולריים', 'ביקוש גבוה'], color: '#023e8a'
   },
   {
     id: 'holon', name: 'חולון', lng: 34.779, lat: 31.997, deals: 16,
     desc: 'עיר צמיחה עם תשואה אטרקטיבית',
-    highlights: ['מחיר נגיש', 'פרויקטי התחדשות', 'קרבת תחבורת'], color: '#4cc9f0'
+    highlights: ['מחיר נגיש', 'פרויקטי התחדשות', 'התפתחות תחבורתית'], color: '#4cc9f0'
   },
   {
     id: 'batayam', name: 'בת ים', lng: 34.749, lat: 31.999, deals: 12,
     desc: 'קו ראשון לים במחיר נגיש',
-    highlights: ['קו ראשון לים', 'שכונות מתחדשות', 'תשואה גבוהה'], color: '#90e0ef'
+    highlights: ['קו ראשון לים', 'שכונות מתחדשות', 'הטבות מס'], color: '#90e0ef'
   },
   {
     id: 'petahtikva', name: 'פתח תקווה', lng: 34.888, lat: 32.086, deals: 8,
@@ -49,7 +49,7 @@ export const CITIES: CityData[] = [
   {
     id: 'herzliya', name: 'הרצליה', lng: 34.845, lat: 32.163, deals: 17,
     desc: 'יוקרה והייטק לאורך החוף',
-    highlights: ['נכסי יוקרה', 'הייטק והישטארטאפ', 'קו ראשון לים'], color: '#1e6091'
+    highlights: ['נכסי יוקרה', 'הייטק', 'קו ראשון לים'], color: '#1e6091'
   },
   {
     id: 'beersheva', name: 'באר שבע', lng: 34.791, lat: 31.252, deals: 35,
@@ -59,7 +59,7 @@ export const CITIES: CityData[] = [
   {
     id: 'netivot', name: 'נתיבות', lng: 34.589, lat: 31.418, deals: 10,
     desc: 'הזדמנות בעיר המתפתחת',
-    highlights: ['מחיר נגיש מאוד', 'צמיחה מערכתית', 'תשואה גבוהה'], color: '#2980b9'
+    highlights: ['מחיר נגיש מאוד', 'צמיחה מערכתית', 'הטבות מס'], color: '#2980b9'
   },
 ];
 
@@ -71,7 +71,7 @@ const STAT_ITEMS = [
 
 const IsraeliMap: React.FC = () => {
   const [active, setActive] = useState<string | null>(null);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1024);
@@ -147,7 +147,7 @@ const IsraeliMap: React.FC = () => {
         {/* Grid: Map + Cards */}
         <div className="grid lg:grid-cols-2 gap-10 items-start max-w-7xl mx-auto">
 
-          {/* MAP — lazy loaded to save mobile bundle size */}
+          {/* MAP - lazy loaded to save mobile bundle size */}
           {!isMobile && (
             <Suspense fallback={
               <div className="hidden lg:flex flex-1 justify-center items-center w-full min-h-[650px]">

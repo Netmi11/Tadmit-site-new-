@@ -53,7 +53,7 @@ const ROICalculator: React.FC = () => {
             </span>
           </h2>
           <p className="text-white/50 font-medium text-lg max-w-xl mx-auto">
-            הזינו את פרטי הנכס וגלו את פוטנציאל ההכנסה — לעומת פיקדון בנקאי
+            הזינו את פרטי הנכס וגלו את פוטנציאל ההכנסה - לעומת פיקדון בנקאי
           </p>
           <div className="w-24 h-1.5 mx-auto mt-6 rounded-full"
             style={{ background: 'linear-gradient(90deg, #D4AF37, rgba(212,175,55,0.3))' }} />

@@ -85,7 +85,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
         </div>
 
-        <p className="text-white/20 text-[10px] text-left mt-4">© בניית אתר — נתנאל מילר</p>
+        <p className="text-white/20 text-[10px] text-left mt-4">© בניית אתר - נתנאל מילר</p>
       </div>
     </footer>
   );

@@ -15,3 +15,6 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// Reveal page after React mounts (prevents flash of old scroll position)
+rootElement.style.opacity = '1';

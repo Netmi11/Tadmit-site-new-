@@ -35,7 +35,7 @@ function makeIcon(city: CityData, isActive: boolean) {
   });
 }
 
-// Fly to active city — does NOT fly back when deactivated
+// Fly to active city - does NOT fly back when deactivated
 function MapController({ cities, active }: { cities: CityData[]; active: string | null }) {
   const map = useMap();
   useEffect(() => {
@@ -66,7 +66,7 @@ function CityMarkers({ cities, active }: { cities: CityData[]; active: string | 
     };
   }, [cities]);
 
-  // Update icons in-place — no marker recreation
+  // Update icons in-place - no marker recreation
   useEffect(() => {
     cities.forEach(city => {
       const marker = markersRef.current[city.id];

@@ -45,7 +45,7 @@ const MissionVision: React.FC = () => {
             >
               <h3 className="text-2xl font-black text-gold mb-4">השקט שלכם</h3>
               <p className="text-lg text-white/70 leading-relaxed font-medium">
-                אתם יכולים להיות <strong className="text-gold font-semibold">בראש שקט</strong> כשיש מישהו שדואג לאינטרסים שלכם <strong className="text-gold font-semibold">ב-100%</strong> ומחפש את העסקאות שהכי מתאימות לכם — ולא מתנגשות עם אינטרסים של מוכרים, יזמים או <strong className="text-gold font-semibold">עמלות תיווך חבויות</strong>.
+                אתם יכולים להיות <strong className="text-gold font-semibold">בראש שקט</strong> כשיש מישהו שדואג לאינטרסים שלכם <strong className="text-gold font-semibold">ב-100%</strong> ומחפש את העסקאות שהכי מתאימות לכם - ולא מתנגשות עם אינטרסים של מוכרים, יזמים או <strong className="text-gold font-semibold">עמלות תיווך חבויות</strong>.
               </p>
             </motion.div>
           </div>
