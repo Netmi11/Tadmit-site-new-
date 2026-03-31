@@ -6,7 +6,7 @@ import { Send } from 'lucide-react';
 const N8N_WEBHOOK_URL = 'https://n8n.srv1270696.hstgr.cloud/webhook/594e4a2d-bc43-4f4d-9f5a-02f28afc9754';
 
 const ContactForm: React.FC = () => {
-  const [formData, setFormData] = useState({ name: '', phone: '', interest: 'ליווי אישי' });
+  const [formData, setFormData] = useState({ name: '', phone: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -19,13 +19,12 @@ const ContactForm: React.FC = () => {
         body: JSON.stringify({
           name: formData.name,
           phone: formData.phone,
-          interest: formData.interest,
           timestamp: new Date().toISOString(),
           source: 'ironteam.co.il',
         }),
       });
       setStatus('success');
-      setFormData({ name: '', phone: '', interest: 'ליווי אישי' });
+      setFormData({ name: '', phone: '' });
     } catch {
       setStatus('error');
     }
@@ -102,24 +101,6 @@ const ContactForm: React.FC = () => {
               </div>
             </div>
 
-            <div className="space-y-4">
-              <label className="text-white font-black text-sm uppercase tracking-wider block">מה מעניין אותך?</label>
-              <div className="relative">
-                <select
-                  value={formData.interest}
-                  onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                  className="w-full border-2 border-white/10 rounded-2xl py-5 px-8 text-white focus:border-gold outline-none transition-all text-right text-lg appearance-none cursor-pointer"
-                  style={{ backgroundColor: '#1B3A5C' }}
-                >
-                  <option value="ליווי אישי" style={{ backgroundColor: '#1B3A5C', color: 'white' }}>ליווי אישי לקניית דירה</option>
-                  <option value="קבוצת רוכשים" style={{ backgroundColor: '#1B3A5C', color: 'white' }}>הצטרפות לקבוצת רוכשים</option>
-                  <option value="שיתוף פעולה" style={{ backgroundColor: '#1B3A5C', color: 'white' }}>שיתוף פעולה עסקי</option>
-                </select>
-                <div className="absolute left-6 top-1/2 -translate-y-1/2 pointer-events-none text-white/30">
-                  <Send size={20} className="rotate-180" />
-                </div>
-              </div>
-            </div>
 
             {status === 'error' && (
               <p className="text-red-400 text-sm text-center">שגיאה בשליחה. אנא נסה שוב או צור קשר בטלפון.</p>
