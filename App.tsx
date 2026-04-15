@@ -104,11 +104,10 @@ const App: React.FC = () => {
       { src: '/assets/לקוחות מרוצים 1.webp', rotate: '-2deg' },
       { src: '/assets/לקוחות מרוצים 2.webp', rotate:  '1.5deg' },
       { src: '/assets/לקוחות מרוצים 3.webp', rotate:  '2deg' },
-      { src: '/assets/לקוחות מרוצים 4.jpeg', rotate: '-1.5deg' },
+      { src: '/assets/לקוחות מרוצים 4.webp', rotate: '-1.5deg' },
       { src: '/assets/happy-customers-5.webp', rotate: '1deg' },
       { src: '/assets/happy-customers-6.webp', rotate: '-1.5deg' },
       { src: '/assets/happy-customers-7.webp', rotate: '2deg' },
-      { src: '/assets/happy-customers-8.webp', rotate: '-2deg' },
     ];
     const stats = [
       { value: 100, suffix: '+', label: 'עסקאות מוצלחות' },
