@@ -35,19 +35,13 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
 דוגלים בשקיפות מלאה לאורך כל התהליך.
           </p>
 
-          <div className="flex flex-col sm:flex-row-reverse gap-4">
+          <div>
             <button
               onClick={() => navigateTo('contact-page')}
               className="bg-gold text-navy px-10 py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-gold/20"
             >
               לשיחת ייעוץ חינמית לחץ כאן
               <Send size={20} />
-            </button>
-            <button
-              onClick={() => navigateTo('personal')}
-              className="bg-white text-navy border-2 border-navy/10 px-10 py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 transition-all hover:bg-navy/5"
-            >
-              המסלול לליווי אישי
             </button>
           </div>
         </div>
