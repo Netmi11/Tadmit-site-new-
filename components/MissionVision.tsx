@@ -7,7 +7,7 @@ const MissionVision: React.FC = () => {
   return (
     <section id="vision" className="py-32 bg-white relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -20,11 +20,17 @@ const MissionVision: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-black text-navy mb-8 leading-tight">החזון שלנו</h2>
             <div className="w-24 h-2 bg-gold mb-12 rounded-full" />
 
-            <p className="text-xl md:text-3xl text-navy leading-relaxed font-bold px-4">
-              החזון שלנו הוא להוביל מהפכה של <strong className="text-gold font-semibold">יושרה</strong> בשוק הנדל"ן הישראלי ולהגדיר מחדש את משמעות <strong className="text-gold font-semibold">הנאמנות ללקוח</strong>.
-              אנו מחויבים להעניק ליווי אסטרטגי <strong className="text-gold font-semibold">אובייקטיבי, שקוף ומבוסס נתונים</strong>, המהווה מגן מקצועי עבור המשקיע ומציב את <strong className="text-gold font-semibold">האינטרס שלו מעל הכל</strong>.
-              אנחנו כאן כדי להפוך את הדרך ל<strong className="text-gold font-semibold">חופש כלכלי</strong> לתהליך בטוח ומשנה חיים, המאפשר לכל לקוח לצמוח בראש שקט לעבר העתיד שתמיד שאף אליו.
-            </p>
+            <div className="text-xl md:text-2xl text-navy/80 leading-loose font-medium px-4 space-y-6">
+              <p>
+                החזון שלנו הוא להוביל מהפכה של <strong className="text-gold font-semibold">יושרה</strong> בשוק הנדל"ן הישראלי ולהגדיר מחדש את משמעות <strong className="text-gold font-semibold">הנאמנות ללקוח</strong>.
+              </p>
+              <p>
+                אנו מחויבים להעניק ליווי אסטרטגי <strong className="text-gold font-semibold">אובייקטיבי, שקוף ומבוסס נתונים</strong>, המהווה מגן מקצועי עבור המשקיע ומציב את <strong className="text-gold font-semibold">האינטרס שלו מעל הכל</strong>.
+              </p>
+              <p>
+                אנחנו כאן כדי להפוך את הדרך ל<strong className="text-gold font-semibold">חופש כלכלי</strong> לתהליך בטוח ומשנה חיים, המאפשר לכל לקוח לצמוח בראש שקט לעבר העתיד שתמיד שאף אליו.
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>
