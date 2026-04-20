@@ -31,23 +31,17 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
           <p className="text-xl md:text-2xl text-navy/70 leading-relaxed mb-10 max-w-xl">
             מומחי נדל&quot;ן. נציגי קונים בלעדיים.
 צמד ברזל - ניתוח שוק מעמיק, עסקאות מדויקות, 100% נאמנות לאינטרס שלך.
-עם ניסיון של 100+ עסקאות ו-5 שנות ליווי מקצועי - אנחנו יודעים בדיוק מה לחפש, ומה להימנע ממנו.
+עם ניסיון של 75+ עסקאות ו-5 שנות ליווי מקצועי - אנחנו יודעים בדיוק מה לחפש, ומה להימנע ממנו.
 דוגלים בשקיפות מלאה לאורך כל התהליך.
           </p>
 
-          <div className="flex flex-col sm:flex-row-reverse gap-4">
+          <div>
             <button
               onClick={() => navigateTo('contact-page')}
               className="bg-gold text-navy px-10 py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-gold/20"
             >
-              לעסקה 100% בצד שלך - לייעוץ
+              לשיחת ייעוץ חינמית לחץ כאן
               <Send size={20} />
-            </button>
-            <button
-              onClick={() => navigateTo('personal')}
-              className="bg-white text-navy border-2 border-navy/10 px-10 py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 transition-all hover:bg-navy/5"
-            >
-              המסלול לליווי אישי
             </button>
           </div>
         </div>

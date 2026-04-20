@@ -12,7 +12,7 @@ export const NAV_LINKS: NavLink[] = [
 
 export const STATS: StatItem[] = [
   { value: '5', label: 'שנות פעילות', suffix: '+' },
-  { value: '100', label: 'עסקאות מוצלחות', suffix: '+' },
+  { value: '75', label: 'עסקאות מוצלחות', suffix: '+' },
   { value: '75', label: 'לקוחות מרוצים', suffix: '+' },
   { value: '10', label: 'ערים שונות בישראל', suffix: '+' },
 ];

@@ -110,7 +110,7 @@ const App: React.FC = () => {
       { src: '/assets/happy-customers-7.webp', rotate: '2deg' },
     ];
     const stats = [
-      { value: 100, suffix: '+', label: 'עסקאות מוצלחות' },
+      { value: 75, suffix: '+', label: 'עסקאות מוצלחות' },
       { value: 75, suffix: '+', label: 'לקוחות מרוצים' },
       { value: 5, suffix: '+', label: 'שנות פעילות' },
     ];
@@ -424,10 +424,10 @@ const App: React.FC = () => {
             <Team />
             <Services navigateTo={navigateTo} />
             <Stats />
-            <IsraeliMap />
             <MilitaryLectures />
             <Testimonials />
             <FAQ />
+            <IsraeliMap />
             <section className="py-24 bg-white">
               <div className="container mx-auto px-6 max-w-6xl">
                 <ContactForm />

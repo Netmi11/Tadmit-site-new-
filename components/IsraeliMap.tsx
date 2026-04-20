@@ -64,7 +64,7 @@ export const CITIES: CityData[] = [
 ];
 
 const STAT_ITEMS = [
-  { value: '122+', label: 'עסקאות', icon: <Home size={18} /> },
+  { value: '75+', label: 'עסקאות', icon: <Home size={18} /> },
   { value: '9', label: 'ערים', icon: <MapPin size={18} /> },
   { value: '5+', label: 'שנות ניסיון', icon: <Building2 size={18} /> },
 ];
