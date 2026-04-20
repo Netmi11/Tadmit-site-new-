@@ -1,5 +1,4 @@
 import React from 'react';
-import { Shield } from 'lucide-react';
 
 interface Props { onNavigate: (page: string) => void; }
 
@@ -13,10 +12,6 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
 const PrivacyPolicy: React.FC<Props> = ({ onNavigate }) => (
   <div className="min-h-screen bg-offwhite">
     <div className="bg-navy py-20 text-center">
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gold/10 border border-gold/20 rounded-full mb-6">
-        <Shield className="text-gold" size={16} />
-        <span className="text-gold font-black tracking-widest text-xs uppercase">מסמך משפטי</span>
-      </div>
       <h1 className="text-4xl md:text-5xl font-black text-white">מדיניות פרטיות</h1>
       <p className="text-white/50 mt-4 text-lg">עודכן לאחרונה: ינואר 2025</p>
     </div>

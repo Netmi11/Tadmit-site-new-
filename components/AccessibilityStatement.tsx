@@ -1,5 +1,4 @@
 import React from 'react';
-import { Eye } from 'lucide-react';
 
 interface Props { onNavigate: (page: string) => void; }
 
@@ -13,10 +12,6 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
 const AccessibilityStatement: React.FC<Props> = ({ onNavigate }) => (
   <div className="min-h-screen bg-offwhite">
     <div className="bg-navy py-20 text-center">
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gold/10 border border-gold/20 rounded-full mb-6">
-        <Eye className="text-gold" size={16} />
-        <span className="text-gold font-black tracking-widest text-xs uppercase">נגישות</span>
-      </div>
       <h1 className="text-4xl md:text-5xl font-black text-white">הצהרת נגישות</h1>
       <p className="text-white/50 mt-4 text-lg">עודכן לאחרונה: ינואר 2025</p>
     </div>
@@ -38,7 +33,7 @@ const AccessibilityStatement: React.FC<Props> = ({ onNavigate }) => (
       <Section title="פנייה בנושא נגישות">
         <p>נתקלת בבעיית נגישות? נשמח לעזור ונגיב תוך 5 ימי עסקים:</p>
         <div className="bg-white rounded-2xl p-6 border border-navy/10 space-y-2">
-          <p><strong>דוא&quot;ל:</strong> <a href="mailto:SNGinfodesk@gmail.com" className="text-gold font-bold hover:underline">SNGinfodesk@gmail.com</a></p>
+          <p><strong>דוא&quot;ל:</strong> <a href="mailto:SNGinfodesk@gmail.com" className="text-gold font-bold hover:underline">SNGinfodesk@gmail.com</a></p>
         </div>
       </Section>
       <Section title="בסיס חוקי">
