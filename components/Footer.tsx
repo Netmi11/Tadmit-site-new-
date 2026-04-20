@@ -70,7 +70,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 rel="noopener noreferrer"
                 className="bg-gold text-navy font-black px-8 py-3 rounded-xl w-full hover:scale-105 transition-transform text-center block"
               >
-                להצטרפות לקבוצת השקטה
+                להצטרפות לקהילת הווצאפ
               </a>
             </div>
           </div>
