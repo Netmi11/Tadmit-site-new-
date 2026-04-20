@@ -18,16 +18,16 @@ const MissionVision: React.FC = () => {
             <div className="w-20 h-20 bg-gold/10 text-gold rounded-full flex items-center justify-center mb-8">
               <ShieldCheck size={48} />
             </div>
-            <h2 className="text-4xl md:text-5xl font-black text-navy mb-8 leading-tight">החזון שלנו</h2>
+            <h2 className="text-5xl md:text-6xl font-black text-navy mb-8 leading-tight">החזון שלנו</h2>
             <div className="w-24 h-2 bg-gold mb-12 rounded-full" />
 
-            <div className="relative px-8 md:px-16 py-12 bg-offwhite/60 rounded-[2.5rem] border border-navy/5">
+            <div className="relative px-4 md:px-12">
               <Quote
-                size={72}
-                className="text-gold/20 absolute -top-5 right-4 md:right-6 rotate-180"
+                size={80}
+                className="text-gold/25 absolute -top-6 right-0 md:-right-4 rotate-180"
                 strokeWidth={1}
               />
-              <div className="text-xl md:text-2xl text-navy leading-loose font-medium italic space-y-6">
+              <div className="text-[1.625rem] md:text-[1.95rem] text-navy leading-loose font-medium italic space-y-6">
                 <p>
                   החזון שלנו הוא להוביל מהפכה של <strong className="text-gold font-semibold not-italic">יושרה</strong> בשוק הנדל"ן הישראלי ולהגדיר מחדש את משמעות <strong className="text-gold font-semibold not-italic">הנאמנות ללקוח</strong>.
                 </p>
@@ -39,8 +39,8 @@ const MissionVision: React.FC = () => {
                 </p>
               </div>
               <Quote
-                size={72}
-                className="text-gold/20 absolute -bottom-5 left-4 md:left-6"
+                size={80}
+                className="text-gold/25 absolute -bottom-6 left-0 md:-left-4"
                 strokeWidth={1}
               />
             </div>
