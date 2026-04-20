@@ -6,7 +6,8 @@ import { ShieldCheck, Quote } from 'lucide-react';
 const MissionVision: React.FC = () => {
   return (
     <section id="vision" className="py-32 bg-white relative overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-12">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[160px] pointer-events-none" />
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -20,11 +21,11 @@ const MissionVision: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-black text-navy mb-8 leading-tight">החזון שלנו</h2>
             <div className="w-24 h-2 bg-gold mb-12 rounded-full" />
 
-            <div className="relative px-4 md:px-12">
+            <div className="relative px-8 md:px-16 py-12 bg-offwhite/60 rounded-[2.5rem] border border-navy/5">
               <Quote
-                size={56}
-                className="text-gold/30 absolute -top-4 right-0 md:-right-8 rotate-180"
-                strokeWidth={1.5}
+                size={72}
+                className="text-gold/20 absolute -top-5 right-4 md:right-6 rotate-180"
+                strokeWidth={1}
               />
               <div className="text-xl md:text-2xl text-navy leading-loose font-medium italic space-y-6">
                 <p>
@@ -38,9 +39,9 @@ const MissionVision: React.FC = () => {
                 </p>
               </div>
               <Quote
-                size={56}
-                className="text-gold/30 absolute -bottom-4 left-0 md:-left-8"
-                strokeWidth={1.5}
+                size={72}
+                className="text-gold/20 absolute -bottom-5 left-4 md:left-6"
+                strokeWidth={1}
               />
             </div>
           </motion.div>
