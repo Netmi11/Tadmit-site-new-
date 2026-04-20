@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck } from 'lucide-react';
+import { ShieldCheck, Quote } from 'lucide-react';
 
 const MissionVision: React.FC = () => {
   return (
@@ -20,16 +20,28 @@ const MissionVision: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-black text-navy mb-8 leading-tight">החזון שלנו</h2>
             <div className="w-24 h-2 bg-gold mb-12 rounded-full" />
 
-            <div className="text-xl md:text-2xl text-navy/80 leading-loose font-medium px-4 space-y-6">
-              <p>
-                החזון שלנו הוא להוביל מהפכה של <strong className="text-gold font-semibold">יושרה</strong> בשוק הנדל"ן הישראלי ולהגדיר מחדש את משמעות <strong className="text-gold font-semibold">הנאמנות ללקוח</strong>.
-              </p>
-              <p>
-                אנו מחויבים להעניק ליווי אסטרטגי <strong className="text-gold font-semibold">אובייקטיבי, שקוף ומבוסס נתונים</strong>, המהווה מגן מקצועי עבור המשקיע ומציב את <strong className="text-gold font-semibold">האינטרס שלו מעל הכל</strong>.
-              </p>
-              <p>
-                אנחנו כאן כדי להפוך את הדרך ל<strong className="text-gold font-semibold">חופש כלכלי</strong> לתהליך בטוח ומשנה חיים, המאפשר לכל לקוח לצמוח בראש שקט לעבר העתיד שתמיד שאף אליו.
-              </p>
+            <div className="relative px-4 md:px-12">
+              <Quote
+                size={56}
+                className="text-gold/30 absolute -top-4 right-0 md:-right-8 rotate-180"
+                strokeWidth={1.5}
+              />
+              <div className="text-xl md:text-2xl text-navy leading-loose font-medium italic space-y-6">
+                <p>
+                  החזון שלנו הוא להוביל מהפכה של <strong className="text-gold font-semibold not-italic">יושרה</strong> בשוק הנדל"ן הישראלי ולהגדיר מחדש את משמעות <strong className="text-gold font-semibold not-italic">הנאמנות ללקוח</strong>.
+                </p>
+                <p>
+                  אנו מחויבים להעניק ליווי אסטרטגי <strong className="text-gold font-semibold not-italic">אובייקטיבי, שקוף ומבוסס נתונים</strong>, המהווה מגן מקצועי עבור המשקיע ומציב את <strong className="text-gold font-semibold not-italic">האינטרס שלו מעל הכל</strong>.
+                </p>
+                <p>
+                  אנחנו כאן כדי להפוך את הדרך ל<strong className="text-gold font-semibold not-italic">חופש כלכלי</strong> לתהליך בטוח ומשנה חיים, המאפשר לכל לקוח לצמוח בראש שקט לעבר העתיד שתמיד שאף אליו.
+                </p>
+              </div>
+              <Quote
+                size={56}
+                className="text-gold/30 absolute -bottom-4 left-0 md:-left-8"
+                strokeWidth={1.5}
+              />
             </div>
           </motion.div>
         </div>
