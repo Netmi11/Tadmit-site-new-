@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import CookieConsent from './components/CookieConsent';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
 
 // Lazy load components not needed for initial paint
 const Stats = lazy(() => import('./components/Stats'));
@@ -472,6 +473,7 @@ const App: React.FC = () => {
       <WhatsAppButton />
       <AccessibilityWidget />
       <CookieConsent onNavigate={navigateTo} />
+      <Analytics />
     </div>
   );
 };
