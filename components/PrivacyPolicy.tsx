@@ -13,7 +13,7 @@ const PrivacyPolicy: React.FC<Props> = ({ onNavigate }) => (
   <div className="min-h-screen bg-offwhite">
     <div className="bg-navy pt-32 md:pt-48 pb-16 md:pb-20 text-center">
       <h1 className="text-4xl md:text-5xl font-black text-white">מדיניות פרטיות</h1>
-      <p className="text-white/50 mt-4 text-lg">עודכן לאחרונה: ינואר 2025</p>
+      <p className="text-white/50 mt-4 text-lg">עודכן לאחרונה: מאי 2026</p>
     </div>
     <div className="container mx-auto px-6 max-w-4xl py-20 text-right">
       <Section title="מבוא">
@@ -22,8 +22,9 @@ const PrivacyPolicy: React.FC<Props> = ({ onNavigate }) => (
       </Section>
       <Section title="מידע שאנו אוספים">
         <p><strong>מידע שאתה מספק:</strong> שם מלא, דוא&quot;ל, מספר טלפון ותוכן הודעות שנשלחות דרך טפסי יצירת הקשר.</p>
-        <p><strong>מידע אוטומטי:</strong> כתובת IP, סוג דפדפן, דפים שנצפו - באמצעות Google Analytics לצורכי ניתוח תנועה בלבד.</p>
-        <p><strong>עוגיות:</strong> אנו משתמשים בעוגיות חיוניות לתפקוד האתר. ניתן לבטלן בהגדרות הדפדפן.</p>
+        <p><strong>נתוני שימוש מצטברים (Vercel Web Analytics):</strong> אנו משתמשים בשירות Vercel Web Analytics לספירת מבקרים וצפיות בעמודים. השירות <strong>אינו עושה שימוש בעוגיות</strong>, אינו שומר כתובות IP ואינו אוסף מידע אישי מזהה. הזיהוי מתבצע באמצעות hash אנונימי שמתחלף יומית.</p>
+        <p><strong>Google Analytics (בכפוף להסכמה):</strong> אם אישרת את השימוש בעוגיות בבאנר שמופיע בכניסה הראשונה, נטען Google Analytics 4 לצורכי ניתוח תנועה ושיפור האתר. ניתן לחזור בך מההסכמה בכל עת על ידי ניקוי עוגיות הדפדפן.</p>
+        <p><strong>עוגיות:</strong> אנו משתמשים רק בעוגיות חיוניות לתפקוד האתר ובעוגיות אנליטיקה (רק לאחר הסכמה). ניתן לבטלן בהגדרות הדפדפן.</p>
       </Section>
       <Section title="שימוש במידע">
         <p>אנו משתמשים במידע למטרות הבאות בלבד:</p>
