@@ -313,27 +313,70 @@ const App: React.FC = () => {
               badge="ערך מוסף"
             />
             <section className="py-24 bg-offwhite">
-              <div className="container mx-auto px-6 max-w-3xl text-center">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  className="bg-white rounded-[3rem] border border-navy/8 shadow-xl shadow-navy/5 px-10 py-16"
-                >
-                  <div className="w-20 h-20 bg-gold/10 rounded-3xl flex items-center justify-center mx-auto mb-8">
-                    <FileText className="text-gold" size={36} />
-                  </div>
-                  <h2 className="text-3xl md:text-4xl font-black text-navy mb-4">העמוד בבנייה</h2>
-                  <p className="text-xl text-navy/60 font-medium leading-relaxed mb-8">
-                    אנחנו עובדים על תוכן איכותי עבורכם - מדריכים, כלים ומשאבים שיעזרו לכם להשקיע חכם יותר.
-                    <br />
-                    <span className="text-gold font-black">יהיה מוכן בקרוב!</span>
-                  </p>
-                  <div className="inline-flex items-center gap-3 px-6 py-3 bg-gold/10 border border-gold/20 rounded-full">
-                    <div className="w-2 h-2 bg-gold rounded-full animate-pulse" />
-                    <span className="text-navy font-black text-sm tracking-widest uppercase">בעבודה</span>
-                  </div>
-                </motion.div>
+              <div className="container mx-auto px-6 max-w-6xl text-right">
+                <div className="text-center mb-16">
+                  <span className="text-gold font-black tracking-[0.4em] uppercase text-sm block mb-4">מדריכים להורדה חינמית</span>
+                  <h2 className="text-4xl md:text-5xl font-black text-navy mb-4">תוכן מקצועי שיעזור לכם להשקיע חכם יותר</h2>
+                  <div className="w-24 h-1.5 bg-gold mx-auto rounded-full" />
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-8">
+                  {[
+                    {
+                      icon: <Building size={32} />,
+                      title: 'איפה הכסף שלכם יעבוד חזק יותר?',
+                      desc: 'השוואת אסטרטגיות השקעה: דירה מקבלן (פריסייל) מול דירה יד שנייה. יתרונות, חסרונות, וטבלת השוואה.',
+                      pages: 7,
+                      slug: 'pre-sale-vs-resale',
+                    },
+                    {
+                      icon: <Key size={32} />,
+                      title: 'איך לקבל החלטות כלכליות משמעותיות',
+                      desc: '6 שלבים מבוססי מספרים לקבלת החלטה כלכלית גדולה - לא תחושת בטן. עם דוגמה של מעבר דירה.',
+                      pages: 6,
+                      slug: 'financial-decisions',
+                    },
+                    {
+                      icon: <ShieldCheck size={32} />,
+                      title: 'מה אסור לעשות לפני שלוקחים משכנתא',
+                      desc: '6 מוקשים שיכולים לפוצץ את העסקה ברגע האחרון - ואיך להימנע מהם. מדריך פרקטי בעברית פשוטה.',
+                      pages: 7,
+                      slug: 'mortgage-mistakes',
+                    },
+                  ].map((g, idx) => (
+                    <motion.a
+                      key={idx}
+                      href={`/guides/${g.slug}/`}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: idx * 0.1 }}
+                      className="group relative block bg-white rounded-[2.5rem] p-10 shadow-xl shadow-navy/5 border border-navy/5 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                    >
+                      <div className="absolute top-0 left-0 w-32 h-32 bg-gold/5 blur-3xl rounded-full -translate-x-1/2 -translate-y-1/2 group-hover:bg-gold/10 transition-colors duration-500 pointer-events-none" />
+                      <div className="relative">
+                        <div className="flex justify-end mb-6">
+                          <div className="w-16 h-16 bg-navy text-gold rounded-2xl flex items-center justify-center shadow-lg shadow-navy/10 group-hover:scale-110 transition-transform duration-500">
+                            {g.icon}
+                          </div>
+                        </div>
+                        <h3 className="text-2xl font-black text-navy mb-4 leading-tight">{g.title}</h3>
+                        <p className="text-navy/60 font-medium leading-relaxed mb-8 min-h-[6rem]">{g.desc}</p>
+                        <div className="flex items-center justify-between pt-6 border-t border-navy/5">
+                          <span className="text-sm text-navy/40 font-medium">{g.pages} עמודים · PDF</span>
+                          <span className="inline-flex items-center gap-2 text-gold font-black group-hover:gap-3 transition-all">
+                            <Download size={20} />
+                            לקבלה במייל
+                          </span>
+                        </div>
+                      </div>
+                    </motion.a>
+                  ))}
+                </div>
+
+                <div className="mt-12 text-center">
+                  <p className="text-navy/50 font-medium text-sm">משאירים אימייל - המדריך נשלח אליכם תוך דקה. בחינם, אפשר להסיר את ההרשמה בכל עת.</p>
+                </div>
               </div>
             </section>
             <ROICalculator />
