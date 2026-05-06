@@ -41,6 +41,50 @@ const App: React.FC = () => {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
+  // Per-route SEO metadata: updates <title> and meta description on hash route change
+  useEffect(() => {
+    const seoMap: Record<string, { title: string; description: string }> = {
+      home: {
+        title: 'צמד ברזל | ליווי והשקעות נדל״ן בישראל - עמית גולד ונועם סדן',
+        description: 'צמד ברזל - חברת ליווי והשקעות נדל״ן בישראל בראשות עמית גולד ונועם סדן, קצינים לשעבר. ליווי אישי, קבוצות רוכשים, מחשבון ROI וייעוץ מקצועי.'
+      },
+      personal: {
+        title: 'ליווי אישי לרכישת דירה | צמד ברזל',
+        description: 'ליווי מקצועי מבוסס נתונים לרכישת דירה: אפיון אישי, חקר שוק, מו״מ, ליווי משפטי וקבלת מפתח. מאת צמד ברזל - עמית גולד ונועם סדן.'
+      },
+      group: {
+        title: 'קבוצות רוכשים בלעדיות | צמד ברזל',
+        description: 'הצטרפו לקבוצת רוכשים של צמד ברזל וקבלו הנחות משמעותיות בנדל״ן. מינוף כוח הקנייה ומציאת פרויקטים בפרי-סייל.'
+      },
+      value: {
+        title: 'מרכז הידע ומחשבון ROI נדל״ן | צמד ברזל',
+        description: 'כלים, מדריכים ומחשבון ROI לחישוב כדאיות עסקת נדל״ן. למשקיעים מתחילים ומנוסים מבית צמד ברזל.'
+      },
+      about: {
+        title: 'אודות צמד ברזל - עמית גולד ונועם סדן | קצינים לשעבר בנדל״ן',
+        description: 'הסיפור של עמית גולד ונועם סדן, מייסדי צמד ברזל. ערכי הליבה: אמינות, שקיפות ומקצוענות בשטח. ליווי השקעות נדל״ן בערכים צבאיים.'
+      },
+      'contact-page': {
+        title: 'צרו קשר | צמד ברזל - ליווי נדל״ן',
+        description: 'צרו קשר עם צמד ברזל לתיאום שיחת ייעוץ. טלפון 054-8654555, מייל SNGinfodesk@gmail.com, מנחם בגין 121 תל אביב.'
+      },
+      privacy: { title: 'מדיניות פרטיות | צמד ברזל', description: 'מדיניות הפרטיות של אתר צמד ברזל - ironteam.co.il.' },
+      terms: { title: 'תנאי שימוש | צמד ברזל', description: 'תנאי השימוש באתר צמד ברזל - ironteam.co.il.' },
+      accessibility: { title: 'הצהרת נגישות | צמד ברזל', description: 'הצהרת הנגישות של אתר צמד ברזל - ironteam.co.il.' }
+    };
+    const meta = seoMap[currentPage] || seoMap.home;
+    document.title = meta.title;
+    const setMeta = (selector: string, attr: string, value: string) => {
+      const el = document.querySelector(selector) as HTMLMetaElement | null;
+      if (el) el.setAttribute(attr, value);
+    };
+    setMeta('meta[name="description"]', 'content', meta.description);
+    setMeta('meta[property="og:title"]', 'content', meta.title);
+    setMeta('meta[property="og:description"]', 'content', meta.description);
+    setMeta('meta[name="twitter:title"]', 'content', meta.title);
+    setMeta('meta[name="twitter:description"]', 'content', meta.description);
+  }, [currentPage]);
+
   // Unified navigation function to prevent environment redirect issues
   const navigateTo = useCallback((page: string) => {
     const cleanPage = page.replace('#', '');

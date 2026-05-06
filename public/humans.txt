@@ -1,0 +1,18 @@
+/* TEAM */
+שותף מייסד: עמית גולד (Amit Gold)
+שותף מייסד: נועם סדן (Noam Sadan)
+
+/* CONTACT */
+Email: SNGinfodesk@gmail.com
+Phone: +972-54-8654555
+Address: מנחם בגין 121, מתחם עזריאלי שרונה, תל אביב
+WhatsApp: https://wa.me/972548654555
+Instagram: https://www.instagram.com/ironteam_realestate/
+
+/* SITE */
+Last update: 2026-05-06
+Language: Hebrew (he-IL)
+Doctype: HTML5
+Frameworks: React 19, TypeScript, Vite 6, TailwindCSS 3
+Hosted: Vercel
+Standards: HTML5, CSS3, Schema.org, Open Graph, Twitter Cards

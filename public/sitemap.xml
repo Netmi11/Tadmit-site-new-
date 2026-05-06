@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.ironteam.co.il/</loc>
     <lastmod>2026-05-06</lastmod>
@@ -8,35 +9,14 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="he-IL" href="https://www.ironteam.co.il/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ironteam.co.il/" />
-  </url>
-  <url>
-    <loc>https://www.ironteam.co.il/#personal</loc>
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.ironteam.co.il/#group</loc>
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.ironteam.co.il/#about</loc>
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.ironteam.co.il/#value</loc>
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.ironteam.co.il/#contact-page</loc>
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ironteam.co.il/assets/og-image.png</image:loc>
+      <image:title>צמד ברזל - ליווי והשקעות נדל״ן</image:title>
+      <image:caption>צמד ברזל - חברת ליווי והשקעות נדל״ן בישראל</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ironteam.co.il/assets/logo.png</image:loc>
+      <image:title>לוגו צמד ברזל</image:title>
+    </image:image>
   </url>
 </urlset>
