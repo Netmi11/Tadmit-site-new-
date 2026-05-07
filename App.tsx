@@ -22,7 +22,6 @@ const IsraeliMap = lazy(() => import('./components/IsraeliMap'));
 const Timeline = lazy(() => import('./components/Timeline'));
 const SubPageHero = lazy(() => import('./components/SubPageHero'));
 const FAQ = lazy(() => import('./components/FAQ'));
-const ROICalculator = lazy(() => import('./components/ROICalculator'));
 const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
 const TermsOfUse = lazy(() => import('./components/TermsOfUse'));
 const AccessibilityStatement = lazy(() => import('./components/AccessibilityStatement'));
@@ -365,7 +364,6 @@ const App: React.FC = () => {
                         <div className="flex items-center justify-between pt-6 border-t border-navy/5">
                           <span className="text-sm text-navy/40 font-medium">{g.pages} עמודים · PDF</span>
                           <span className="inline-flex items-center gap-2 text-gold font-black group-hover:gap-3 transition-all">
-                            <Download size={20} />
                             לקבלה במייל
                           </span>
                         </div>
@@ -379,7 +377,6 @@ const App: React.FC = () => {
                 </div>
               </div>
             </section>
-            <ROICalculator />
             <FAQ />
             <section className="py-24 bg-white">
               <div className="container mx-auto px-6 max-w-6xl">
