@@ -64,7 +64,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
               className="bg-gold text-navy px-8 py-2.5 rounded-full font-black text-sm transition-all hover:scale-105 hover:shadow-lg active:scale-95 flex items-center gap-2"
             >
               <PhoneCall size={16} />
-              לשיחת ייעוץ חינם
+              לשיחת ייעוץ
             </button>
           </div>
 
@@ -140,7 +140,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
                 onClick={(e) => { setMobileMenuOpen(false); handleLinkClick(e, 'contact-page'); }}
                 className="bg-gold text-navy py-4 rounded-xl text-xl font-bold"
               >
-                לשיחת ייעוץ חינם
+                לשיחת ייעוץ
               </button>
             </div>
           </motion.div>
