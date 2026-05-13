@@ -18,7 +18,7 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
         <div
-          className="order-2 lg:order-1 text-right animate-[fadeInUp_0.8s_ease-out_both]"
+          className="order-2 lg:order-1 text-right mt-6 lg:mt-0 animate-[fadeInUp_0.8s_ease-out_both]"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gold/10 border border-gold/20 rounded-full mb-6">
             <ShieldCheck className="text-gold" size={16} />
@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
             ומציבים סטנדרט חדש של ליווי אסטרטגי המבוסס על שקיפות מלאה וניתוח נתונים מדויק.
           </p>
 
-          <div>
+          <div className="flex justify-center lg:justify-end">
             <button
               onClick={() => navigateTo('contact-page')}
               className="bg-gold text-navy px-10 py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-gold/20"
