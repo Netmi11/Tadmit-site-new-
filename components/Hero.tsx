@@ -38,7 +38,7 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
               onClick={() => navigateTo('contact-page')}
               className="bg-gold text-navy px-10 py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-gold/20"
             >
-              לשיחת ייעוץ חינמית לחץ כאן
+              לשיחת ייעוץ לחץ כאן
               <Send size={20} />
             </button>
           </div>
