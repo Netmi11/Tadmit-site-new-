@@ -9,7 +9,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-offwhite">
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 pb-12 lg:pb-0 overflow-hidden bg-offwhite">
       {/* Aurora background - temporarily disabled for performance testing */}
 
       <div className="absolute top-0 right-0 w-1/2 h-full bg-navy/5 -skew-x-12 transform translate-x-1/4" />
