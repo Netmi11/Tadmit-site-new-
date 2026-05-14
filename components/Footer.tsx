@@ -79,8 +79,8 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white/40 text-sm font-medium">
           <p>© 2024 צמד ברזל - יזמות ונדל"ן. כל הזכויות שמורות.</p>
           <div className="flex gap-8">
-            <button onClick={() => onNavigate('privacy')} className="hover:text-gold transition-colors">מדיניות פרטיות</button>
-            <button onClick={() => onNavigate('terms')} className="hover:text-gold transition-colors">תנאי שימוש</button>
+            <a href="/privacy-policy" onClick={(e) => { e.preventDefault(); onNavigate('privacy'); }} className="hover:text-gold transition-colors">מדיניות פרטיות</a>
+            <a href="/terms-of-service" onClick={(e) => { e.preventDefault(); onNavigate('terms'); }} className="hover:text-gold transition-colors">תנאי שימוש</a>
             <button onClick={() => onNavigate('accessibility')} className="hover:text-gold transition-colors">הצהרת נגישות</button>
           </div>
         </div>
