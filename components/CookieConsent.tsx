@@ -80,12 +80,13 @@ export default function CookieConsent({ onNavigate }: CookieConsentProps) {
               <h3 className="text-navy font-black text-base mb-1">האתר משתמש בעוגיות</h3>
               <p className="text-navy/60 text-xs md:text-sm leading-relaxed mb-3 md:mb-4">
                 אנו משתמשים בעוגיות לצורך ניתוח תנועה ושיפור חוויית הגלישה.{' '}
-                <button
-                  onClick={() => { onNavigate('privacy'); setVisible(false); }}
+                <a
+                  href="/privacy-policy"
+                  onClick={(e) => { e.preventDefault(); onNavigate('privacy'); setVisible(false); }}
                   className="text-gold font-bold underline underline-offset-2 hover:text-gold/80"
                 >
                   מדיניות פרטיות
-                </button>
+                </a>
               </p>
               <div className="flex gap-3">
                 <button

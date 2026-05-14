@@ -58,5 +58,9 @@
     { "source": "/group", "destination": "/#group", "permanent": false },
     { "source": "/value", "destination": "/#value", "permanent": false },
     { "source": "/contact", "destination": "/#contact-page", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/privacy-policy", "destination": "/" },
+    { "source": "/terms-of-service", "destination": "/" }
   ]
 }
