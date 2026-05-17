@@ -7,6 +7,9 @@
   var pdfUrl = (window.GUIDE_CONFIG || {}).pdfUrl;
   var guideTitle = (window.GUIDE_CONFIG || {}).title;
 
+  var ref = '';
+  try { ref = new URL(window.location.href).searchParams.get('ref') || ''; } catch (_) {}
+
   var form = document.getElementById('guideForm');
   var nameInput = document.getElementById('nameInput');
   var emailInput = document.getElementById('emailInput');
@@ -45,6 +48,7 @@
       pdf_url: pdfUrl,
       title: guideTitle,
       source: 'tadmit-site',
+      ref: ref,
     };
 
     fetch(SUBSCRIBE_URL, {
