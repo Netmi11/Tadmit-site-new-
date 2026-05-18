@@ -343,7 +343,7 @@ const App: React.FC = () => {
                   <div className="w-24 h-1.5 bg-gold mx-auto rounded-full" />
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                   {[
                     {
                       icon: <Building size={32} />,
@@ -365,6 +365,13 @@ const App: React.FC = () => {
                       desc: '6 מוקשים שיכולים לפוצץ את העסקה ברגע האחרון - ואיך להימנע מהם. מדריך פרקטי בעברית פשוטה.',
                       pages: 7,
                       slug: 'mortgage-mistakes',
+                    },
+                    {
+                      icon: <FileText size={32} />,
+                      title: 'הסעיפים שמגנים עליך כשמשכירים לטווח ארוך',
+                      desc: 'כל הסעיפים שצריכים להיות בחוזה שכירות לטווח ארוך - בלי טעויות שיעלו לך אלפי שקלים.',
+                      pages: 5,
+                      slug: 'long-term-rental',
                     },
                   ].map((g, idx) => (
                     <motion.a
