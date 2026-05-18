@@ -343,7 +343,7 @@ const App: React.FC = () => {
                   <div className="w-24 h-1.5 bg-gold mx-auto rounded-full" />
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid md:grid-cols-3 gap-8">
                   {[
                     {
                       icon: <Building size={32} />,
